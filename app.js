@@ -1,9 +1,18 @@
 let products = [
-{id:"tee-lilac",name:"REVE Studio Tee",color:"Warm cream",category:"shirts",price:2995,bg:"#e8e3d9",fabric:"#d8cdb8",type:"tee"},
-{id:"hoodie-cream",name:"REVE Rhythm Hoodie",color:"Soft lilac",category:"hoodies",price:6495,bg:"#e7dfed",fabric:"#b8a2cf",type:"hoodie"},
-{id:"tee-black",name:"REVE Signature Tee",color:"Washed black",category:"shirts",price:3495,bg:"#dce0d9",fabric:"#41453e",type:"tee"},
-{id:"cap",name:"Off Duty Cap",color:"Olive",category:"accessoires",price:2495,bg:"#e2e2d5",fabric:"#787f5c",type:"cap"}
+{id:"tee-lilac",name:"REVE Studio Tee",color:"Warm cream",category:"shirts",price:2995,bg:"#e8e3d9",fabric:"#d8cdb8",type:"tee",image:"/cream-tee.png"},
+{id:"hoodie-cream",name:"REVE Rhythm Hoodie",color:"Soft lilac",category:"hoodies",price:6495,bg:"#e7dfed",fabric:"#b8a2cf",type:"hoodie",image:"/lilac-hoodie.png"},
+{id:"tee-black",name:"REVE Signature Tee",color:"Washed black",category:"shirts",price:3495,bg:"#dce0d9",fabric:"#41453e",type:"tee",image:"/black-tee.png"},
+{id:"cap",name:"REVE Everyday Cap",color:"Washed black",category:"petjes",price:2495,bg:"#e2e2d5",fabric:"#41453e",type:"cap",image:"/black-cap.png"}
+,
+{id:"black-hoodie",name:"REVE After Hours Hoodie",color:"Washed black",category:"hoodies",price:6995,type:"hoodie",image:"/black-hoodie.png",bg:"#e8e3d9",fabric:"#41453e"},
+{id:"olive-tee",name:"REVE Olive Studio Tee",color:"Muted olive",category:"shirts",price:3495,type:"tee",image:"/olive-tee.png",bg:"#e8e3d9",fabric:"#787f5c"},
+{id:"cream-tote",name:"REVE Studio Tote",color:"Natural cream",category:"accessoires",price:1995,type:"cap",sizes:["One size"],image:"/cream-tote.png",bg:"#e8e3d9",fabric:"#d8cdb8"},
+{id:"reve-sneakers",name:"REVE Everyday Sneaker",color:"Cream / olive",category:"schoenen",price:8995,type:"shoe",sizes:["36","37","38","39","40","41","42","43","44","45","46"],image:"/reve-sneakers.png",bg:"#e8e3d9",fabric:"#d8cdb8"},
+{id:"reve-keychain",name:"REVE Signature Keychain",color:"Cream / olive",category:"accessoires",price:995,type:"cap",sizes:["One size"],image:"/reve-keychain.png",bg:"#e8e3d9",fabric:"#787f5c"}
+,{"id":"cream-bucket","name":"REVE Studio Bucket Hat","color":"Warm cream","category":"petjes","price":2995,"type":"cap","sizes":["One size"],"image":"/cream-bucket.png","bg":"#e8e3d9","fabric":"#b8a2cf"},{"id":"olive-cap","name":"REVE Everyday Dad Cap","color":"Muted olive","category":"petjes","price":2795,"type":"cap","sizes":["One size"],"image":"/olive-cap.png","bg":"#e8e3d9","fabric":"#b8a2cf"},{"id":"black-sneaker","name":"REVE Night Sneaker","color":"Washed black / cream","category":"schoenen","price":9495,"type":"tee","sizes":["36","37","38","39","40","41","42","43","44","45","46"],"image":"/black-sneaker.png","bg":"#e8e3d9","fabric":"#b8a2cf"},{"id":"cream-high-top","name":"REVE Studio High Top","color":"Cream / lilac","category":"schoenen","price":9995,"type":"tee","sizes":["36","37","38","39","40","41","42","43","44","45","46"],"image":"/cream-high-top.png","bg":"#e8e3d9","fabric":"#b8a2cf"},{"id":"olive-cargo","name":"REVE Utility Cargo","color":"Muted olive","category":"broeken","price":6995,"type":"tee","sizes":["XS","S","M","L","XL"],"image":"/olive-cargo.png","bg":"#e8e3d9","fabric":"#b8a2cf"},{"id":"black-trouser","name":"REVE Relaxed Trouser","color":"Washed black","category":"broeken","price":6495,"type":"tee","sizes":["XS","S","M","L","XL"],"image":"/black-trouser.png","bg":"#e8e3d9","fabric":"#b8a2cf"},{"id":"core-sand-hoodie","name":"REVE Core Oversized Hoodie","color":"Sand","category":"hoodies","price":7495,"line":"core","type":"hoodie","sizes":["XS","S","M","L","XL"],"image":"/core-sand-hoodie.png","bg":"#e8e3d9","fabric":"#b8a2cf"},{"id":"core-sweatpants","name":"REVE Core Relaxed Sweatpants","color":"Oatmeal","category":"broeken","price":5995,"line":"core","type":"tee","sizes":["XS","S","M","L","XL"],"image":"/core-sweatpants.png","bg":"#e8e3d9","fabric":"#b8a2cf"},{"id":"core-boxy-tee","name":"REVE Core Boxy Tee","color":"Warm cream","category":"shirts","price":3995,"line":"core","type":"tee","sizes":["XS","S","M","L","XL"],"image":"/core-boxy-tee.png","bg":"#e8e3d9","fabric":"#b8a2cf"}
+,{"id":"atelier-runner","name":"REVE Atelier Runner","color":"Cream / olive / lilac","category":"schoenen","line":"atelier","price":12995,"type":"shoe","sizes":["36","37","38","39","40","41","42","43","44","45","46"],"image":"/atelier-runner.png","bg":"#e8e3d9","fabric":"#d8cdb8"},{"id":"studio-bomber","name":"REVE Studio Bomber","color":"Washed black / cream","category":"jassen","line":"atelier","price":11995,"type":"jacket","sizes":["XS","S","M","L","XL"],"image":"/studio-bomber.png","bg":"#e8e3d9","fabric":"#41453e"}
 ];
+products.forEach(p=>{p.description=p.description||((p.line==="core"?"REVE Core: rustige oversized basics met een subtiel REVE-logo. ":"")+"Origineel REVE-ontwerpconcept in "+p.color+". Materiaal, afmetingen, productie en definitieve verkoopprijs worden vastgesteld voor de verkoop start.");});
 const money = value => new Intl.NumberFormat("nl-NL",{style:"currency",currency:"EUR"}).format(value/100);
 const escapeHTML=value=>String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;", "'":"&#39;"}[c]));
 function illustration(p) {
@@ -14,17 +23,18 @@ return '<svg viewBox="0 0 400 400" role="img" aria-label="Illustratie van '+p.na
 const sizesFor = p => p.sizes || (p.type === "cap" ? ["One size"] : ["XS","S","M","L","XL"]);
 let activeFilter="all";
 let cart = [];
-try { const saved=JSON.parse(localStorage.getItem("reve-cart")||"[]"); if(Array.isArray(saved)) cart=saved.filter(i=>typeof i.id==="string"&&["XS","S","M","L","XL","One size"].includes(i.size)&&Number.isInteger(i.qty)&&i.qty>0&&i.qty<=99); } catch {}
+try { const saved=JSON.parse(localStorage.getItem("reve-cart")||"[]"); if(Array.isArray(saved)) cart=saved.filter(i=>typeof i.id==="string"&&["XS","S","M","L","XL","One size","36","37","38","39","40","41","42","43","44","45","46","28","29","30","31","32","33","34","35","116","122","128","134","140","146","152","158","164","170"].includes(i.size)&&Number.isInteger(i.qty)&&i.qty>0&&i.qty<=99); } catch {}
 function saveCart(){try{localStorage.setItem("reve-cart",JSON.stringify(cart))}catch{} updateCart();}
 function renderProducts(filter=activeFilter){
 activeFilter=filter;
 const grid=document.getElementById("products");grid.replaceChildren();
+const audience=document.getElementById("audience").value;
 const query=document.getElementById("search").value.trim().toLocaleLowerCase("nl");
 const sort=document.getElementById("sort").value;
-const visible=products.filter(p=>(filter==="all"||p.category===filter)&&[p.name,p.color,p.category].join(" ").toLocaleLowerCase("nl").includes(query));
+const visible=products.filter(p=>(filter==="all"||p.category===filter||(filter==="core"&&p.line==="core"))&&(audience==="all"||(p.audience||"unisex")===audience||((p.audience||"unisex")==="unisex"&&["dames","heren"].includes(audience)))&&[p.name,p.color,p.category].join(" ").toLocaleLowerCase("nl").includes(query));
 visible.sort((a,b)=>sort==="low"?a.price-b.price:sort==="high"?b.price-a.price:sort==="name"?a.name.localeCompare(b.name):0);
 document.getElementById("result-count").textContent=visible.length+" producten";
-if(!visible.length){const empty=document.createElement("div");empty.className="no-results";empty.innerHTML="<h3>Geen kledingstukken gevonden.</h3><p>Probeer een andere zoekterm of bekijk de hele collectie.</p>";const reset=document.createElement("button");reset.className="button dark";reset.textContent="Toon alles";reset.onclick=()=>{document.getElementById("search").value="";document.querySelector('[data-filter="all"]').click()};empty.append(reset);grid.append(empty);}
+if(!visible.length){const empty=document.createElement("div");empty.className="no-results";empty.innerHTML=["jongens","meisjes"].includes(audience)?"<h3>De kindercollectie komt later.</h3><p>Er zijn nog geen REVE-producten voor deze selectie. Bekijk ondertussen de volwassen ontwerpcollectie.</p>":"<h3>Geen kledingstukken gevonden.</h3><p>Probeer een andere zoekterm of bekijk de hele collectie.</p>";const reset=document.createElement("button");reset.className="button dark";reset.textContent="Toon alles";reset.onclick=()=>{document.getElementById("audience").value="all";document.getElementById("search").value="";document.querySelector('[data-filter="all"]').click()};empty.append(reset);grid.append(empty);}
 visible.forEach(p=>{
 p={...p,name:escapeHTML(p.name),color:escapeHTML(p.color)};
 const card=document.createElement("article");card.className="product-card";
@@ -66,3 +76,7 @@ document.getElementById('clear-cart').onclick=()=>{cart=[];saveCart();announce('
 window.addEventListener('storage',event=>{if(event.key==='reve-cart'){try{const data=JSON.parse(event.newValue||'[]');cart=Array.isArray(data)?data.filter(i=>products.some(p=>p.id===i.id&&sizesFor(p).includes(i.size))&&Number.isInteger(i.qty)&&i.qty>0&&i.qty<=99):[];updateCart();}catch{}}});
 
 (async()=>{try{const response=await fetch('/api/catalog');if(!response.ok)throw Error();const data=await response.json();products=[...products,...data.products];cart=cart.filter(i=>products.some(p=>p.id===i.id&&sizesFor(p).includes(i.size)));renderProducts();updateCart();}catch{const note=document.createElement('p');note.className='concept-note';note.textContent='Eigen producten konden niet worden geladen. Vernieuw de pagina om opnieuw te proberen.';document.getElementById('products').before(note)}try{const response=await fetch('/api/catalog?me=1');const data=await response.json();document.getElementById('admin-link').hidden=!data.isOwner;}catch{}})();
+
+document.getElementById('show-core').onclick=()=>document.querySelector('[data-filter=core]').click();
+
+document.getElementById('audience').onchange=()=>renderProducts();

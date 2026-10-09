@@ -1,11 +1,13 @@
-# REVE Studio
+# REVE Studio + Core
 
 Live website: https://reve-first-chapter.rosy-goat-9431.chatgpt.site
 
-Frontendbestanden en serverbron voor REVE. De volledige gehoste versie gebruikt Vinext en Cloudflare R2 via Sites. De server-route onder server/ is een bronreferentie; het complete hostingproject en de campagnebeelden worden in de gekoppelde Sites-bronrepository bewaard.
+20 originele REVE-ontwerpconcepten: shirts, hoodies, broeken, petjes, sneakers, een bomberjack, een tas en een sleutelhanger. Inclusief REVE-logo, fotorealistische gegenereerde productbeelden, campagnebeelden, categorieën en doelgroepselectie. De volwassen collectie is unisex. De kinderselectie geeft eerlijk aan dat er nog geen kinderproducten zijn.
 
-Beheer: /admin.html. Alleen het ChatGPT-account van de eigenaar mag via de server producten opslaan en foto’s uploaden. REVE_OWNER_EMAIL wordt uitsluitend in de hostingomgeving ingesteld. Er staan geen wachtwoorden of geheime sleutels in deze repository.
+Beheer: /admin.html. Alleen het eigenaaraccount mag producten en foto's opslaan. Servercontroles beschermen de mutaties. Afbeeldingen worden in Cloudflare R2 opgeslagen. Geen wachtwoorden of geheime sleutels in deze repository; REVE_OWNER_EMAIL wordt alleen in de hostingomgeving ingesteld.
 
-De campagnebeelden zijn AI-gegenereerde ontwerpconcepten. Voor echte verkoop zijn productie, materiaalgegevens, voorraad, voorwaarden en een betaalprovider nodig. Afrekenen is uitgeschakeld.
+Deze repository bewaart de frontend en de server-route als bronreferentie. De complete Vinext-hostingbron en gegenereerde bestanden worden in de gekoppelde Sites-bronrepository bewaard. Productafbeeldingen zijn onderdeel van die hostingbron.
 
-Verificatie: JavaScript-syntax en servercontroles voor eigenaarstoegang, cross-origin verzoeken, prijzen, foto-URL’s en productopslag getest.
+Alle productbeelden zijn AI-gegenereerde ontwerpvoorstellen. De prijzen zijn indicatief; productie, materialen, voorraad, voorwaarden en betalingen zijn nog niet ingericht. Afrekenen is uitgeschakeld.
+
+Gecontroleerd: 20 unieke producten en alle beeldbestanden, categorieën, Core-lijn, schoenmaten, JavaScript-syntax en servervalidatie voor eigenaarstoegang, cross-origin verzoeken, prijzen, fotoreferenties en opslag. Foto-upload en het opslaan van een bewerkbaar concept zijn op de live website gecontroleerd.
