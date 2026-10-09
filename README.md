@@ -21,3 +21,6 @@ Vervang de voorbeeldproducten, prijzen en illustraties door echte productinforma
 
 ## Publicatie
 Deze commit voegt alleen de websitebestanden toe. Online hosting is een aparte stap.
+
+## Professionele winkelervaring
+Zoeken, sorteren, categorieën, productdetails en maatkeuze. Aantallen aanpassen en winkelmand leegmaken, inclusief bewaren op het apparaat en synchronisatie tussen tabbladen. FAQ geeft eerlijk aan welke informatie nog ontbreekt voor echte verkoop.
