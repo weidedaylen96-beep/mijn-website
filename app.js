@@ -82,3 +82,5 @@ document.getElementById('show-core').onclick=()=>document.querySelector('[data-f
 document.getElementById('audience').onchange=()=>renderProducts();
 
 document.querySelectorAll("[data-discover]").forEach(link=>link.addEventListener("click",()=>{document.getElementById("search").value="";document.getElementById("audience").value="all";document.querySelector(`[data-filter="${link.dataset.discover}"]`).click();}));
+
+(async()=>{try{const response=await fetch('/api/session',{cache:'no-store'});if(!response.ok)throw Error();const session=await response.json();document.getElementById('account-link').textContent=session.authenticated?'Mijn account':'Inloggen';document.getElementById('checkout-login').hidden=session.authenticated;document.getElementById('checkout-unavailable').hidden=!session.authenticated;document.getElementById('account-status').textContent=session.authenticated?'Je bent ingelogd. Bestellen wordt beschikbaar zodra de winkel opent.':'Voor bestellen moet je inloggen of een ChatGPT-account aanmaken.';}catch{document.getElementById('account-status').textContent='Je loginstatus kon niet worden gecontroleerd. Open Mijn account om in te loggen.';}})();
