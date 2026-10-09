@@ -1,26 +1,11 @@
-# REVE
-Eerste versie van de kledingwebsite van REVE. Nederlandstalig, responsive en zonder installatie te openen.
+# REVE Studio
 
-## Bekijken
-Open `index.html` in een moderne browser. Alle bestanden staan in de hoofdmap, zodat deze ook geschikt is voor statische hosting zoals GitHub Pages.
+Live website: https://reve-first-chapter.rosy-goat-9431.chatgpt.site
 
-## Inhoud
-- Homepage met REVE branding en originele SVG-kledingillustraties.
-- Vier voorbeeldproducten met voorbeeldprijzen.
-- Filters voor T-shirts, hoodies en accessoires.
-- Maatkeuze en winkelmand met verwijderen, aantallen en totaal.
-- Winkelmand wordt lokaal in de browser bewaard; er worden geen persoonsgegevens verzameld.
+Frontendbestanden en serverbron voor REVE. De volledige gehoste versie gebruikt Vinext en Cloudflare R2 via Sites. De server-route onder server/ is een bronreferentie; het complete hostingproject en de campagnebeelden worden in de gekoppelde Sites-bronrepository bewaard.
 
-## Bestanden
-- `index.html`: pagina en winkelmanddialog.
-- `styles.css`: vormgeving, mobiele layouts en toegankelijkheidsinstellingen.
-- `app.js`: voorbeeldcollectie, filters en winkelmand.
+Beheer: /admin.html. Alleen het ChatGPT-account van de eigenaar mag via de server producten opslaan en foto’s uploaden. REVE_OWNER_EMAIL wordt uitsluitend in de hostingomgeving ingesteld. Er staan geen wachtwoorden of geheime sleutels in deze repository.
 
-## Voor echte verkoop
-Vervang de voorbeeldproducten, prijzen en illustraties door echte productinformatie en foto's. Voeg voorraad, server-side prijscontrole, betalingen, orderverwerking, contactgegevens en winkelvoorwaarden toe. Afrekenen is bewust uitgeschakeld. Er zijn geen betaalgegevens, accounts of sleutels in deze repository.
+De campagnebeelden zijn AI-gegenereerde ontwerpconcepten. Voor echte verkoop zijn productie, materiaalgegevens, voorraad, voorwaarden en een betaalprovider nodig. Afrekenen is uitgeschakeld.
 
-## Publicatie
-Deze commit voegt alleen de websitebestanden toe. Online hosting is een aparte stap.
-
-## Professionele winkelervaring
-Zoeken, sorteren, categorieën, productdetails en maatkeuze. Aantallen aanpassen en winkelmand leegmaken, inclusief bewaren op het apparaat en synchronisatie tussen tabbladen. FAQ geeft eerlijk aan welke informatie nog ontbreekt voor echte verkoop.
+Verificatie: JavaScript-syntax en servercontroles voor eigenaarstoegang, cross-origin verzoeken, prijzen, foto-URL’s en productopslag getest.
