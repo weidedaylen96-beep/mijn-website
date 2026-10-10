@@ -2,7 +2,7 @@
 
 [Bekijk REVE](https://reve.rosy-goat-9431.chatgpt.site/shop).
 
-De ontwerpcollectie bevat 146 originele REVE-concepten en 24 complete stylingcombinaties. De nieuwste drop bevat 100 aanvullende ontwerpen plus vier Summer Shorts, elk met een apart AI-productbeeld. Tien kleurcollecties combineren shirts, hoodies, jassen, broeken, knitwear, petten, sneakers, tassen en accessoires. Vier extra zomersetjes combineren een shirt, korte broek, sneakers en een petje. Een kleurfilter, zoeken over de hele collectie en 24 producten per pagina houden de catalogus overzichtelijk. De nieuwe stylingcombinaties openen de losse producten met maatkeuze. Productbeelden en campagnebeelden zijn AI-gegenereerd. Prijzen, materialen en pasvormen worden voor de verkoop bevestigd; afrekenen staat nog uit.
+De ontwerpcollectie bevat 146 originele REVE-concepten en 24 complete stylingcombinaties. De nieuwste drop bevat 100 aanvullende ontwerpen plus vier Summer Shorts, elk met een apart AI-productbeeld. Tien kleurcollecties combineren shirts, hoodies, jassen, broeken, knitwear, petten, sneakers, tassen en accessoires. Vier extra zomersetjes combineren een shirt, korte broek, sneakers en een petje. Een kleurfilter, zoeken over de hele collectie en 24 producten per pagina houden de catalogus overzichtelijk. De nieuwe stylingcombinaties openen de losse producten met maatkeuze. Productbeelden en campagnebeelden zijn AI-gegenereerd. De 104 nieuwe websitebeelden worden zonder pixelverlies als WebP geleverd; originele PNG-bestanden zijn afzonderlijk bewaard. Prijzen, materialen en pasvormen worden voor de verkoop bevestigd; afrekenen staat nog uit.
 
 ## Beheer en voorraad
 

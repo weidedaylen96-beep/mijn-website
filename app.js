@@ -55,7 +55,7 @@ const capsuleProducts = [
     "fabric": "#b5aa96",
     "price": 3995,
     "color": "Warm stone / cream",
-    "image": "/merch100/drop100-stone-tee.png",
+    "image": "/merch100/drop100-stone-tee.webp",
     "sizes": [
       "XS",
       "S",
@@ -80,7 +80,7 @@ const capsuleProducts = [
     "fabric": "#b5aa96",
     "price": 7995,
     "color": "Warm stone / cream",
-    "image": "/merch100/drop100-stone-hoodie.png",
+    "image": "/merch100/drop100-stone-hoodie.webp",
     "sizes": [
       "XS",
       "S",
@@ -105,7 +105,7 @@ const capsuleProducts = [
     "fabric": "#b5aa96",
     "price": 9995,
     "color": "Warm stone / cream",
-    "image": "/merch100/drop100-stone-jacket.png",
+    "image": "/merch100/drop100-stone-jacket.webp",
     "sizes": [
       "XS",
       "S",
@@ -130,7 +130,7 @@ const capsuleProducts = [
     "fabric": "#b5aa96",
     "price": 6495,
     "color": "Warm stone / cream",
-    "image": "/merch100/drop100-stone-sweatpants.png",
+    "image": "/merch100/drop100-stone-sweatpants.webp",
     "sizes": [
       "XS",
       "S",
@@ -155,7 +155,7 @@ const capsuleProducts = [
     "fabric": "#b5aa96",
     "price": 8495,
     "color": "Warm stone / cream",
-    "image": "/merch100/drop100-stone-utility-pants.png",
+    "image": "/merch100/drop100-stone-utility-pants.webp",
     "sizes": [
       "XS",
       "S",
@@ -180,7 +180,7 @@ const capsuleProducts = [
     "fabric": "#b5aa96",
     "price": 7495,
     "color": "Warm stone / cream",
-    "image": "/merch100/drop100-stone-knit.png",
+    "image": "/merch100/drop100-stone-knit.webp",
     "sizes": [
       "XS",
       "S",
@@ -205,7 +205,7 @@ const capsuleProducts = [
     "fabric": "#b5aa96",
     "price": 2995,
     "color": "Warm stone / cream",
-    "image": "/merch100/drop100-stone-cap.png",
+    "image": "/merch100/drop100-stone-cap.webp",
     "sizes": [
       "One size"
     ],
@@ -226,7 +226,7 @@ const capsuleProducts = [
     "fabric": "#b5aa96",
     "price": 11995,
     "color": "Warm stone / cream",
-    "image": "/merch100/drop100-stone-sneaker.png",
+    "image": "/merch100/drop100-stone-sneaker.webp",
     "sizes": [
       "36",
       "37",
@@ -257,7 +257,7 @@ const capsuleProducts = [
     "fabric": "#b5aa96",
     "price": 4995,
     "color": "Warm stone / cream",
-    "image": "/merch100/drop100-stone-bag.png",
+    "image": "/merch100/drop100-stone-bag.webp",
     "sizes": [
       "One size"
     ],
@@ -278,7 +278,7 @@ const capsuleProducts = [
     "fabric": "#b5aa96",
     "price": 1995,
     "color": "Warm stone / cream",
-    "image": "/merch100/drop100-stone-accessory.png",
+    "image": "/merch100/drop100-stone-accessory.webp",
     "sizes": [
       "One size"
     ],
@@ -299,7 +299,7 @@ const capsuleProducts = [
     "fabric": "#777c7d",
     "price": 4495,
     "color": "Slate grey / black",
-    "image": "/merch100/drop100-slate-tee.png",
+    "image": "/merch100/drop100-slate-tee.webp",
     "sizes": [
       "XS",
       "S",
@@ -324,7 +324,7 @@ const capsuleProducts = [
     "fabric": "#777c7d",
     "price": 8495,
     "color": "Slate grey / black",
-    "image": "/merch100/drop100-slate-hoodie.png",
+    "image": "/merch100/drop100-slate-hoodie.webp",
     "sizes": [
       "XS",
       "S",
@@ -349,7 +349,7 @@ const capsuleProducts = [
     "fabric": "#777c7d",
     "price": 10495,
     "color": "Slate grey / black",
-    "image": "/merch100/drop100-slate-jacket.png",
+    "image": "/merch100/drop100-slate-jacket.webp",
     "sizes": [
       "XS",
       "S",
@@ -374,7 +374,7 @@ const capsuleProducts = [
     "fabric": "#777c7d",
     "price": 6995,
     "color": "Slate grey / black",
-    "image": "/merch100/drop100-slate-sweatpants.png",
+    "image": "/merch100/drop100-slate-sweatpants.webp",
     "sizes": [
       "XS",
       "S",
@@ -399,7 +399,7 @@ const capsuleProducts = [
     "fabric": "#777c7d",
     "price": 8995,
     "color": "Slate grey / black",
-    "image": "/merch100/drop100-slate-utility-pants.png",
+    "image": "/merch100/drop100-slate-utility-pants.webp",
     "sizes": [
       "XS",
       "S",
@@ -424,7 +424,7 @@ const capsuleProducts = [
     "fabric": "#777c7d",
     "price": 7995,
     "color": "Slate grey / black",
-    "image": "/merch100/drop100-slate-knit.png",
+    "image": "/merch100/drop100-slate-knit.webp",
     "sizes": [
       "XS",
       "S",
@@ -449,7 +449,7 @@ const capsuleProducts = [
     "fabric": "#777c7d",
     "price": 3495,
     "color": "Slate grey / black",
-    "image": "/merch100/drop100-slate-cap.png",
+    "image": "/merch100/drop100-slate-cap.webp",
     "sizes": [
       "One size"
     ],
@@ -470,7 +470,7 @@ const capsuleProducts = [
     "fabric": "#777c7d",
     "price": 12495,
     "color": "Slate grey / black",
-    "image": "/merch100/drop100-slate-sneaker.png",
+    "image": "/merch100/drop100-slate-sneaker.webp",
     "sizes": [
       "36",
       "37",
@@ -501,7 +501,7 @@ const capsuleProducts = [
     "fabric": "#777c7d",
     "price": 5495,
     "color": "Slate grey / black",
-    "image": "/merch100/drop100-slate-bag.png",
+    "image": "/merch100/drop100-slate-bag.webp",
     "sizes": [
       "One size"
     ],
@@ -522,7 +522,7 @@ const capsuleProducts = [
     "fabric": "#777c7d",
     "price": 2495,
     "color": "Slate grey / black",
-    "image": "/merch100/drop100-slate-accessory.png",
+    "image": "/merch100/drop100-slate-accessory.webp",
     "sizes": [
       "One size"
     ],
@@ -543,7 +543,7 @@ const capsuleProducts = [
     "fabric": "#3e5446",
     "price": 4995,
     "color": "Deep forest / ecru",
-    "image": "/merch100/drop100-forest-tee.png",
+    "image": "/merch100/drop100-forest-tee.webp",
     "sizes": [
       "XS",
       "S",
@@ -568,7 +568,7 @@ const capsuleProducts = [
     "fabric": "#3e5446",
     "price": 8995,
     "color": "Deep forest / ecru",
-    "image": "/merch100/drop100-forest-hoodie.png",
+    "image": "/merch100/drop100-forest-hoodie.webp",
     "sizes": [
       "XS",
       "S",
@@ -593,7 +593,7 @@ const capsuleProducts = [
     "fabric": "#3e5446",
     "price": 10995,
     "color": "Deep forest / ecru",
-    "image": "/merch100/drop100-forest-jacket.png",
+    "image": "/merch100/drop100-forest-jacket.webp",
     "sizes": [
       "XS",
       "S",
@@ -618,7 +618,7 @@ const capsuleProducts = [
     "fabric": "#3e5446",
     "price": 7495,
     "color": "Deep forest / ecru",
-    "image": "/merch100/drop100-forest-sweatpants.png",
+    "image": "/merch100/drop100-forest-sweatpants.webp",
     "sizes": [
       "XS",
       "S",
@@ -643,7 +643,7 @@ const capsuleProducts = [
     "fabric": "#3e5446",
     "price": 9495,
     "color": "Deep forest / ecru",
-    "image": "/merch100/drop100-forest-utility-pants.png",
+    "image": "/merch100/drop100-forest-utility-pants.webp",
     "sizes": [
       "XS",
       "S",
@@ -668,7 +668,7 @@ const capsuleProducts = [
     "fabric": "#3e5446",
     "price": 8495,
     "color": "Deep forest / ecru",
-    "image": "/merch100/drop100-forest-knit.png",
+    "image": "/merch100/drop100-forest-knit.webp",
     "sizes": [
       "XS",
       "S",
@@ -693,7 +693,7 @@ const capsuleProducts = [
     "fabric": "#3e5446",
     "price": 3995,
     "color": "Deep forest / ecru",
-    "image": "/merch100/drop100-forest-cap.png",
+    "image": "/merch100/drop100-forest-cap.webp",
     "sizes": [
       "One size"
     ],
@@ -714,7 +714,7 @@ const capsuleProducts = [
     "fabric": "#3e5446",
     "price": 12995,
     "color": "Deep forest / ecru",
-    "image": "/merch100/drop100-forest-sneaker.png",
+    "image": "/merch100/drop100-forest-sneaker.webp",
     "sizes": [
       "36",
       "37",
@@ -745,7 +745,7 @@ const capsuleProducts = [
     "fabric": "#3e5446",
     "price": 5995,
     "color": "Deep forest / ecru",
-    "image": "/merch100/drop100-forest-bag.png",
+    "image": "/merch100/drop100-forest-bag.webp",
     "sizes": [
       "One size"
     ],
@@ -766,7 +766,7 @@ const capsuleProducts = [
     "fabric": "#3e5446",
     "price": 2995,
     "color": "Deep forest / ecru",
-    "image": "/merch100/drop100-forest-accessory.png",
+    "image": "/merch100/drop100-forest-accessory.webp",
     "sizes": [
       "One size"
     ],
@@ -787,7 +787,7 @@ const capsuleProducts = [
     "fabric": "#c4af87",
     "price": 3995,
     "color": "Sand / espresso",
-    "image": "/merch100/drop100-dune-tee.png",
+    "image": "/merch100/drop100-dune-tee.webp",
     "sizes": [
       "XS",
       "S",
@@ -812,7 +812,7 @@ const capsuleProducts = [
     "fabric": "#c4af87",
     "price": 7995,
     "color": "Sand / espresso",
-    "image": "/merch100/drop100-dune-hoodie.png",
+    "image": "/merch100/drop100-dune-hoodie.webp",
     "sizes": [
       "XS",
       "S",
@@ -837,7 +837,7 @@ const capsuleProducts = [
     "fabric": "#c4af87",
     "price": 9995,
     "color": "Sand / espresso",
-    "image": "/merch100/drop100-dune-jacket.png",
+    "image": "/merch100/drop100-dune-jacket.webp",
     "sizes": [
       "XS",
       "S",
@@ -862,7 +862,7 @@ const capsuleProducts = [
     "fabric": "#c4af87",
     "price": 6495,
     "color": "Sand / espresso",
-    "image": "/merch100/drop100-dune-sweatpants.png",
+    "image": "/merch100/drop100-dune-sweatpants.webp",
     "sizes": [
       "XS",
       "S",
@@ -887,7 +887,7 @@ const capsuleProducts = [
     "fabric": "#c4af87",
     "price": 8495,
     "color": "Sand / espresso",
-    "image": "/merch100/drop100-dune-utility-pants.png",
+    "image": "/merch100/drop100-dune-utility-pants.webp",
     "sizes": [
       "XS",
       "S",
@@ -912,7 +912,7 @@ const capsuleProducts = [
     "fabric": "#c4af87",
     "price": 7495,
     "color": "Sand / espresso",
-    "image": "/merch100/drop100-dune-knit.png",
+    "image": "/merch100/drop100-dune-knit.webp",
     "sizes": [
       "XS",
       "S",
@@ -937,7 +937,7 @@ const capsuleProducts = [
     "fabric": "#c4af87",
     "price": 2995,
     "color": "Sand / espresso",
-    "image": "/merch100/drop100-dune-cap.png",
+    "image": "/merch100/drop100-dune-cap.webp",
     "sizes": [
       "One size"
     ],
@@ -958,7 +958,7 @@ const capsuleProducts = [
     "fabric": "#c4af87",
     "price": 11995,
     "color": "Sand / espresso",
-    "image": "/merch100/drop100-dune-sneaker.png",
+    "image": "/merch100/drop100-dune-sneaker.webp",
     "sizes": [
       "36",
       "37",
@@ -989,7 +989,7 @@ const capsuleProducts = [
     "fabric": "#c4af87",
     "price": 4995,
     "color": "Sand / espresso",
-    "image": "/merch100/drop100-dune-bag.png",
+    "image": "/merch100/drop100-dune-bag.webp",
     "sizes": [
       "One size"
     ],
@@ -1010,7 +1010,7 @@ const capsuleProducts = [
     "fabric": "#c4af87",
     "price": 1995,
     "color": "Sand / espresso",
-    "image": "/merch100/drop100-dune-accessory.png",
+    "image": "/merch100/drop100-dune-accessory.webp",
     "sizes": [
       "One size"
     ],
@@ -1031,7 +1031,7 @@ const capsuleProducts = [
     "fabric": "#353635",
     "price": 4495,
     "color": "Washed black / silver",
-    "image": "/merch100/drop100-night-tee.png",
+    "image": "/merch100/drop100-night-tee.webp",
     "sizes": [
       "XS",
       "S",
@@ -1056,7 +1056,7 @@ const capsuleProducts = [
     "fabric": "#353635",
     "price": 8495,
     "color": "Washed black / silver",
-    "image": "/merch100/drop100-night-hoodie.png",
+    "image": "/merch100/drop100-night-hoodie.webp",
     "sizes": [
       "XS",
       "S",
@@ -1081,7 +1081,7 @@ const capsuleProducts = [
     "fabric": "#353635",
     "price": 10495,
     "color": "Washed black / silver",
-    "image": "/merch100/drop100-night-jacket.png",
+    "image": "/merch100/drop100-night-jacket.webp",
     "sizes": [
       "XS",
       "S",
@@ -1106,7 +1106,7 @@ const capsuleProducts = [
     "fabric": "#353635",
     "price": 6995,
     "color": "Washed black / silver",
-    "image": "/merch100/drop100-night-sweatpants.png",
+    "image": "/merch100/drop100-night-sweatpants.webp",
     "sizes": [
       "XS",
       "S",
@@ -1131,7 +1131,7 @@ const capsuleProducts = [
     "fabric": "#353635",
     "price": 8995,
     "color": "Washed black / silver",
-    "image": "/merch100/drop100-night-utility-pants.png",
+    "image": "/merch100/drop100-night-utility-pants.webp",
     "sizes": [
       "XS",
       "S",
@@ -1156,7 +1156,7 @@ const capsuleProducts = [
     "fabric": "#353635",
     "price": 7995,
     "color": "Washed black / silver",
-    "image": "/merch100/drop100-night-knit.png",
+    "image": "/merch100/drop100-night-knit.webp",
     "sizes": [
       "XS",
       "S",
@@ -1181,7 +1181,7 @@ const capsuleProducts = [
     "fabric": "#353635",
     "price": 3495,
     "color": "Washed black / silver",
-    "image": "/merch100/drop100-night-cap.png",
+    "image": "/merch100/drop100-night-cap.webp",
     "sizes": [
       "One size"
     ],
@@ -1202,7 +1202,7 @@ const capsuleProducts = [
     "fabric": "#353635",
     "price": 12495,
     "color": "Washed black / silver",
-    "image": "/merch100/drop100-night-sneaker.png",
+    "image": "/merch100/drop100-night-sneaker.webp",
     "sizes": [
       "36",
       "37",
@@ -1233,7 +1233,7 @@ const capsuleProducts = [
     "fabric": "#353635",
     "price": 5495,
     "color": "Washed black / silver",
-    "image": "/merch100/drop100-night-bag.png",
+    "image": "/merch100/drop100-night-bag.webp",
     "sizes": [
       "One size"
     ],
@@ -1254,7 +1254,7 @@ const capsuleProducts = [
     "fabric": "#353635",
     "price": 2495,
     "color": "Washed black / silver",
-    "image": "/merch100/drop100-night-accessory.png",
+    "image": "/merch100/drop100-night-accessory.webp",
     "sizes": [
       "One size"
     ],
@@ -1275,7 +1275,7 @@ const capsuleProducts = [
     "fabric": "#a5bdc8",
     "price": 4995,
     "color": "Dusty blue / cream",
-    "image": "/merch100/drop100-cloud-tee.png",
+    "image": "/merch100/drop100-cloud-tee.webp",
     "sizes": [
       "XS",
       "S",
@@ -1300,7 +1300,7 @@ const capsuleProducts = [
     "fabric": "#a5bdc8",
     "price": 8995,
     "color": "Dusty blue / cream",
-    "image": "/merch100/drop100-cloud-hoodie.png",
+    "image": "/merch100/drop100-cloud-hoodie.webp",
     "sizes": [
       "XS",
       "S",
@@ -1325,7 +1325,7 @@ const capsuleProducts = [
     "fabric": "#a5bdc8",
     "price": 10995,
     "color": "Dusty blue / cream",
-    "image": "/merch100/drop100-cloud-jacket.png",
+    "image": "/merch100/drop100-cloud-jacket.webp",
     "sizes": [
       "XS",
       "S",
@@ -1350,7 +1350,7 @@ const capsuleProducts = [
     "fabric": "#a5bdc8",
     "price": 7495,
     "color": "Dusty blue / cream",
-    "image": "/merch100/drop100-cloud-sweatpants.png",
+    "image": "/merch100/drop100-cloud-sweatpants.webp",
     "sizes": [
       "XS",
       "S",
@@ -1375,7 +1375,7 @@ const capsuleProducts = [
     "fabric": "#a5bdc8",
     "price": 9495,
     "color": "Dusty blue / cream",
-    "image": "/merch100/drop100-cloud-utility-pants.png",
+    "image": "/merch100/drop100-cloud-utility-pants.webp",
     "sizes": [
       "XS",
       "S",
@@ -1400,7 +1400,7 @@ const capsuleProducts = [
     "fabric": "#a5bdc8",
     "price": 8495,
     "color": "Dusty blue / cream",
-    "image": "/merch100/drop100-cloud-knit.png",
+    "image": "/merch100/drop100-cloud-knit.webp",
     "sizes": [
       "XS",
       "S",
@@ -1425,7 +1425,7 @@ const capsuleProducts = [
     "fabric": "#a5bdc8",
     "price": 3995,
     "color": "Dusty blue / cream",
-    "image": "/merch100/drop100-cloud-cap.png",
+    "image": "/merch100/drop100-cloud-cap.webp",
     "sizes": [
       "One size"
     ],
@@ -1446,7 +1446,7 @@ const capsuleProducts = [
     "fabric": "#a5bdc8",
     "price": 12995,
     "color": "Dusty blue / cream",
-    "image": "/merch100/drop100-cloud-sneaker.png",
+    "image": "/merch100/drop100-cloud-sneaker.webp",
     "sizes": [
       "36",
       "37",
@@ -1477,7 +1477,7 @@ const capsuleProducts = [
     "fabric": "#a5bdc8",
     "price": 5995,
     "color": "Dusty blue / cream",
-    "image": "/merch100/drop100-cloud-bag.png",
+    "image": "/merch100/drop100-cloud-bag.webp",
     "sizes": [
       "One size"
     ],
@@ -1498,7 +1498,7 @@ const capsuleProducts = [
     "fabric": "#a5bdc8",
     "price": 2995,
     "color": "Dusty blue / cream",
-    "image": "/merch100/drop100-cloud-accessory.png",
+    "image": "/merch100/drop100-cloud-accessory.webp",
     "sizes": [
       "One size"
     ],
@@ -1519,7 +1519,7 @@ const capsuleProducts = [
     "fabric": "#a97979",
     "price": 3995,
     "color": "Muted rosewood / taupe",
-    "image": "/merch100/drop100-rosewood-tee.png",
+    "image": "/merch100/drop100-rosewood-tee.webp",
     "sizes": [
       "XS",
       "S",
@@ -1544,7 +1544,7 @@ const capsuleProducts = [
     "fabric": "#a97979",
     "price": 7995,
     "color": "Muted rosewood / taupe",
-    "image": "/merch100/drop100-rosewood-hoodie.png",
+    "image": "/merch100/drop100-rosewood-hoodie.webp",
     "sizes": [
       "XS",
       "S",
@@ -1569,7 +1569,7 @@ const capsuleProducts = [
     "fabric": "#a97979",
     "price": 9995,
     "color": "Muted rosewood / taupe",
-    "image": "/merch100/drop100-rosewood-jacket.png",
+    "image": "/merch100/drop100-rosewood-jacket.webp",
     "sizes": [
       "XS",
       "S",
@@ -1594,7 +1594,7 @@ const capsuleProducts = [
     "fabric": "#a97979",
     "price": 6495,
     "color": "Muted rosewood / taupe",
-    "image": "/merch100/drop100-rosewood-sweatpants.png",
+    "image": "/merch100/drop100-rosewood-sweatpants.webp",
     "sizes": [
       "XS",
       "S",
@@ -1619,7 +1619,7 @@ const capsuleProducts = [
     "fabric": "#a97979",
     "price": 8495,
     "color": "Muted rosewood / taupe",
-    "image": "/merch100/drop100-rosewood-utility-pants.png",
+    "image": "/merch100/drop100-rosewood-utility-pants.webp",
     "sizes": [
       "XS",
       "S",
@@ -1644,7 +1644,7 @@ const capsuleProducts = [
     "fabric": "#a97979",
     "price": 7495,
     "color": "Muted rosewood / taupe",
-    "image": "/merch100/drop100-rosewood-knit.png",
+    "image": "/merch100/drop100-rosewood-knit.webp",
     "sizes": [
       "XS",
       "S",
@@ -1669,7 +1669,7 @@ const capsuleProducts = [
     "fabric": "#a97979",
     "price": 2995,
     "color": "Muted rosewood / taupe",
-    "image": "/merch100/drop100-rosewood-cap.png",
+    "image": "/merch100/drop100-rosewood-cap.webp",
     "sizes": [
       "One size"
     ],
@@ -1690,7 +1690,7 @@ const capsuleProducts = [
     "fabric": "#a97979",
     "price": 11995,
     "color": "Muted rosewood / taupe",
-    "image": "/merch100/drop100-rosewood-sneaker.png",
+    "image": "/merch100/drop100-rosewood-sneaker.webp",
     "sizes": [
       "36",
       "37",
@@ -1721,7 +1721,7 @@ const capsuleProducts = [
     "fabric": "#a97979",
     "price": 4995,
     "color": "Muted rosewood / taupe",
-    "image": "/merch100/drop100-rosewood-bag.png",
+    "image": "/merch100/drop100-rosewood-bag.webp",
     "sizes": [
       "One size"
     ],
@@ -1742,7 +1742,7 @@ const capsuleProducts = [
     "fabric": "#a97979",
     "price": 1995,
     "color": "Muted rosewood / taupe",
-    "image": "/merch100/drop100-rosewood-accessory.png",
+    "image": "/merch100/drop100-rosewood-accessory.webp",
     "sizes": [
       "One size"
     ],
@@ -1763,7 +1763,7 @@ const capsuleProducts = [
     "fabric": "#344a64",
     "price": 4495,
     "color": "Deep navy / pale blue",
-    "image": "/merch100/drop100-ocean-tee.png",
+    "image": "/merch100/drop100-ocean-tee.webp",
     "sizes": [
       "XS",
       "S",
@@ -1788,7 +1788,7 @@ const capsuleProducts = [
     "fabric": "#344a64",
     "price": 8495,
     "color": "Deep navy / pale blue",
-    "image": "/merch100/drop100-ocean-hoodie.png",
+    "image": "/merch100/drop100-ocean-hoodie.webp",
     "sizes": [
       "XS",
       "S",
@@ -1813,7 +1813,7 @@ const capsuleProducts = [
     "fabric": "#344a64",
     "price": 10495,
     "color": "Deep navy / pale blue",
-    "image": "/merch100/drop100-ocean-jacket.png",
+    "image": "/merch100/drop100-ocean-jacket.webp",
     "sizes": [
       "XS",
       "S",
@@ -1838,7 +1838,7 @@ const capsuleProducts = [
     "fabric": "#344a64",
     "price": 6995,
     "color": "Deep navy / pale blue",
-    "image": "/merch100/drop100-ocean-sweatpants.png",
+    "image": "/merch100/drop100-ocean-sweatpants.webp",
     "sizes": [
       "XS",
       "S",
@@ -1863,7 +1863,7 @@ const capsuleProducts = [
     "fabric": "#344a64",
     "price": 8995,
     "color": "Deep navy / pale blue",
-    "image": "/merch100/drop100-ocean-utility-pants.png",
+    "image": "/merch100/drop100-ocean-utility-pants.webp",
     "sizes": [
       "XS",
       "S",
@@ -1888,7 +1888,7 @@ const capsuleProducts = [
     "fabric": "#344a64",
     "price": 7995,
     "color": "Deep navy / pale blue",
-    "image": "/merch100/drop100-ocean-knit.png",
+    "image": "/merch100/drop100-ocean-knit.webp",
     "sizes": [
       "XS",
       "S",
@@ -1913,7 +1913,7 @@ const capsuleProducts = [
     "fabric": "#344a64",
     "price": 3495,
     "color": "Deep navy / pale blue",
-    "image": "/merch100/drop100-ocean-cap.png",
+    "image": "/merch100/drop100-ocean-cap.webp",
     "sizes": [
       "One size"
     ],
@@ -1934,7 +1934,7 @@ const capsuleProducts = [
     "fabric": "#344a64",
     "price": 12495,
     "color": "Deep navy / pale blue",
-    "image": "/merch100/drop100-ocean-sneaker.png",
+    "image": "/merch100/drop100-ocean-sneaker.webp",
     "sizes": [
       "36",
       "37",
@@ -1965,7 +1965,7 @@ const capsuleProducts = [
     "fabric": "#344a64",
     "price": 5495,
     "color": "Deep navy / pale blue",
-    "image": "/merch100/drop100-ocean-bag.png",
+    "image": "/merch100/drop100-ocean-bag.webp",
     "sizes": [
       "One size"
     ],
@@ -1986,7 +1986,7 @@ const capsuleProducts = [
     "fabric": "#344a64",
     "price": 2495,
     "color": "Deep navy / pale blue",
-    "image": "/merch100/drop100-ocean-accessory.png",
+    "image": "/merch100/drop100-ocean-accessory.webp",
     "sizes": [
       "One size"
     ],
@@ -2007,7 +2007,7 @@ const capsuleProducts = [
     "fabric": "#b78060",
     "price": 4995,
     "color": "Terracotta / oat",
-    "image": "/merch100/drop100-clay-tee.png",
+    "image": "/merch100/drop100-clay-tee.webp",
     "sizes": [
       "XS",
       "S",
@@ -2032,7 +2032,7 @@ const capsuleProducts = [
     "fabric": "#b78060",
     "price": 8995,
     "color": "Terracotta / oat",
-    "image": "/merch100/drop100-clay-hoodie.png",
+    "image": "/merch100/drop100-clay-hoodie.webp",
     "sizes": [
       "XS",
       "S",
@@ -2057,7 +2057,7 @@ const capsuleProducts = [
     "fabric": "#b78060",
     "price": 10995,
     "color": "Terracotta / oat",
-    "image": "/merch100/drop100-clay-jacket.png",
+    "image": "/merch100/drop100-clay-jacket.webp",
     "sizes": [
       "XS",
       "S",
@@ -2082,7 +2082,7 @@ const capsuleProducts = [
     "fabric": "#b78060",
     "price": 7495,
     "color": "Terracotta / oat",
-    "image": "/merch100/drop100-clay-sweatpants.png",
+    "image": "/merch100/drop100-clay-sweatpants.webp",
     "sizes": [
       "XS",
       "S",
@@ -2107,7 +2107,7 @@ const capsuleProducts = [
     "fabric": "#b78060",
     "price": 9495,
     "color": "Terracotta / oat",
-    "image": "/merch100/drop100-clay-utility-pants.png",
+    "image": "/merch100/drop100-clay-utility-pants.webp",
     "sizes": [
       "XS",
       "S",
@@ -2132,7 +2132,7 @@ const capsuleProducts = [
     "fabric": "#b78060",
     "price": 8495,
     "color": "Terracotta / oat",
-    "image": "/merch100/drop100-clay-knit.png",
+    "image": "/merch100/drop100-clay-knit.webp",
     "sizes": [
       "XS",
       "S",
@@ -2157,7 +2157,7 @@ const capsuleProducts = [
     "fabric": "#b78060",
     "price": 3995,
     "color": "Terracotta / oat",
-    "image": "/merch100/drop100-clay-cap.png",
+    "image": "/merch100/drop100-clay-cap.webp",
     "sizes": [
       "One size"
     ],
@@ -2178,7 +2178,7 @@ const capsuleProducts = [
     "fabric": "#b78060",
     "price": 12995,
     "color": "Terracotta / oat",
-    "image": "/merch100/drop100-clay-sneaker.png",
+    "image": "/merch100/drop100-clay-sneaker.webp",
     "sizes": [
       "36",
       "37",
@@ -2209,7 +2209,7 @@ const capsuleProducts = [
     "fabric": "#b78060",
     "price": 5995,
     "color": "Terracotta / oat",
-    "image": "/merch100/drop100-clay-bag.png",
+    "image": "/merch100/drop100-clay-bag.webp",
     "sizes": [
       "One size"
     ],
@@ -2230,7 +2230,7 @@ const capsuleProducts = [
     "fabric": "#b78060",
     "price": 2995,
     "color": "Terracotta / oat",
-    "image": "/merch100/drop100-clay-accessory.png",
+    "image": "/merch100/drop100-clay-accessory.webp",
     "sizes": [
       "One size"
     ],
@@ -2251,7 +2251,7 @@ const capsuleProducts = [
     "fabric": "#d9d5c9",
     "price": 3995,
     "color": "Ivory / charcoal",
-    "image": "/merch100/drop100-pearl-tee.png",
+    "image": "/merch100/drop100-pearl-tee.webp",
     "sizes": [
       "XS",
       "S",
@@ -2276,7 +2276,7 @@ const capsuleProducts = [
     "fabric": "#d9d5c9",
     "price": 7995,
     "color": "Ivory / charcoal",
-    "image": "/merch100/drop100-pearl-hoodie.png",
+    "image": "/merch100/drop100-pearl-hoodie.webp",
     "sizes": [
       "XS",
       "S",
@@ -2301,7 +2301,7 @@ const capsuleProducts = [
     "fabric": "#d9d5c9",
     "price": 9995,
     "color": "Ivory / charcoal",
-    "image": "/merch100/drop100-pearl-jacket.png",
+    "image": "/merch100/drop100-pearl-jacket.webp",
     "sizes": [
       "XS",
       "S",
@@ -2326,7 +2326,7 @@ const capsuleProducts = [
     "fabric": "#d9d5c9",
     "price": 6495,
     "color": "Ivory / charcoal",
-    "image": "/merch100/drop100-pearl-sweatpants.png",
+    "image": "/merch100/drop100-pearl-sweatpants.webp",
     "sizes": [
       "XS",
       "S",
@@ -2351,7 +2351,7 @@ const capsuleProducts = [
     "fabric": "#d9d5c9",
     "price": 8495,
     "color": "Ivory / charcoal",
-    "image": "/merch100/drop100-pearl-utility-pants.png",
+    "image": "/merch100/drop100-pearl-utility-pants.webp",
     "sizes": [
       "XS",
       "S",
@@ -2376,7 +2376,7 @@ const capsuleProducts = [
     "fabric": "#d9d5c9",
     "price": 7495,
     "color": "Ivory / charcoal",
-    "image": "/merch100/drop100-pearl-knit.png",
+    "image": "/merch100/drop100-pearl-knit.webp",
     "sizes": [
       "XS",
       "S",
@@ -2401,7 +2401,7 @@ const capsuleProducts = [
     "fabric": "#d9d5c9",
     "price": 2995,
     "color": "Ivory / charcoal",
-    "image": "/merch100/drop100-pearl-cap.png",
+    "image": "/merch100/drop100-pearl-cap.webp",
     "sizes": [
       "One size"
     ],
@@ -2422,7 +2422,7 @@ const capsuleProducts = [
     "fabric": "#d9d5c9",
     "price": 11995,
     "color": "Ivory / charcoal",
-    "image": "/merch100/drop100-pearl-sneaker.png",
+    "image": "/merch100/drop100-pearl-sneaker.webp",
     "sizes": [
       "36",
       "37",
@@ -2453,7 +2453,7 @@ const capsuleProducts = [
     "fabric": "#d9d5c9",
     "price": 4995,
     "color": "Ivory / charcoal",
-    "image": "/merch100/drop100-pearl-bag.png",
+    "image": "/merch100/drop100-pearl-bag.webp",
     "sizes": [
       "One size"
     ],
@@ -2474,7 +2474,7 @@ const capsuleProducts = [
     "fabric": "#d9d5c9",
     "price": 1995,
     "color": "Ivory / charcoal",
-    "image": "/merch100/drop100-pearl-accessory.png",
+    "image": "/merch100/drop100-pearl-accessory.webp",
     "sizes": [
       "One size"
     ],
@@ -2497,7 +2497,7 @@ const summerShortProducts = [
     "fabric": "#b5aa96",
     "price": 4495,
     "color": "Warm stone / cream",
-    "image": "/merch100/drop05-stone-shorts.png",
+    "image": "/merch100/drop05-stone-shorts.webp",
     "sizes": [
       "XS",
       "S",
@@ -2522,7 +2522,7 @@ const summerShortProducts = [
     "fabric": "#3e5446",
     "price": 4495,
     "color": "Deep forest / ecru",
-    "image": "/merch100/drop05-forest-shorts.png",
+    "image": "/merch100/drop05-forest-shorts.webp",
     "sizes": [
       "XS",
       "S",
@@ -2547,7 +2547,7 @@ const summerShortProducts = [
     "fabric": "#a5bdc8",
     "price": 4495,
     "color": "Dusty blue / cream",
-    "image": "/merch100/drop05-cloud-shorts.png",
+    "image": "/merch100/drop05-cloud-shorts.webp",
     "sizes": [
       "XS",
       "S",
@@ -2572,7 +2572,7 @@ const summerShortProducts = [
     "fabric": "#a97979",
     "price": 4495,
     "color": "Muted rosewood / taupe",
-    "image": "/merch100/drop05-rosewood-shorts.png",
+    "image": "/merch100/drop05-rosewood-shorts.webp",
     "sizes": [
       "XS",
       "S",
