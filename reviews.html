@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f4">
+  <meta name="description" content="Lees echte ervaringen met REVE en de website. Deel na het inloggen je eigen review en sterrenbeoordeling.">
+  <title>Reviews — REVE Clothing</title>
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/reviews.css">
+  <script src="/reviews.js" defer></script>
+</head>
+<body class="storefront">
+  <a class="skip-link" href="#reviews-main">Direct naar de reviews</a>
+  <div class="announcement">REVE / WEAR YOUR OWN RHYTHM</div>
+  <header>
+    <a class="logo" href="/shop" aria-label="REVE home"><img class="brand-logo" src="/reve-logo.svg" alt="REVE"></a>
+    <nav aria-label="Hoofdnavigatie">
+      <a href="/shop#collectie">Collectie</a>
+      <a href="/shop#looks">REVE setjes</a>
+      <a href="/about.html">Over REVE</a>
+      <a href="/reviews.html" aria-current="page">Reviews</a>
+      <a href="/service.html">Klantenservice</a>
+    </nav>
+    <a class="cart-button" href="/shop">Naar de collectie ↗</a>
+  </header>
+  <main id="reviews-main" class="reviews-page" data-reviews-mode="page">
+    <section class="reviews-hero" aria-labelledby="reviews-title">
+      <div>
+        <p class="eyebrow">REVE / JOUW ERVARING</p>
+        <h1 id="reviews-title">Jouw woorden.<br>Ons volgende <em>hoofdstuk.</em></h1>
+        <p class="reviews-intro">Hoe ervaar jij REVE? Vertel wat je van het merk, de collectie en de website vindt. Elke echte ervaring helpt ons verder.</p>
+        <a class="reviews-text-link" href="#review-schrijven">Deel jouw ervaring ↗</a>
+      </div>
+      <div class="reviews-summary" data-review-summary hidden></div>
+    </section>
+    <div class="review-context"><span class="review-context-mark" aria-hidden="true">↗</span><p><strong>Ervaringen met REVE en de website.</strong> De verkoop is nog niet geopend. Deze reviews zijn daarom geen beoordelingen van aankopen en worden niet als geverifieerde aankopen aangeduid.</p></div>
+    <div class="reviews-layout">
+      <section class="reviews-read" aria-labelledby="reviews-read-title">
+        <div class="reviews-section-heading"><p class="eyebrow">DE REVE COMMUNITY</p><h2 id="reviews-read-title">Eerlijk <em>gedeeld.</em></h2><p>De nieuwste openbare ervaringen staan bovenaan.</p></div>
+        <p class="review-content-status" data-review-load-status role="status" aria-live="polite">Ervaringen ophalen…</p>
+        <button class="reviews-retry" type="button" data-review-retry hidden>Opnieuw proberen ↗</button>
+        <div class="reviews-list" data-review-list></div>
+        <div class="reviews-pagination" data-review-pagination hidden>
+          <button type="button" data-review-previous>← Vorige</button>
+          <span data-review-page-label></span>
+          <button type="button" data-review-next>Volgende →</button>
+        </div>
+      </section>
+      <section id="review-schrijven" class="review-write" aria-labelledby="review-write-title">
+        <p class="eyebrow">REVE / DEEL JOUW ERVARING</p>
+        <h2 id="review-write-title">Wat vind <em>jij?</em></h2>
+        <p>Schrijf in je eigen woorden. Kies een naam die anderen mogen zien en deel alleen informatie die openbaar mag zijn.</p>
+        <p class="review-auth-status" data-review-auth-status role="status">We controleren of je bent ingelogd.</p>
+        <a class="button dark review-login" data-review-login href="/signin-with-chatgpt?return_to=%2Freviews.html" target="_top" hidden>Inloggen om een review te schrijven ↗</a>
+        <p class="review-own-status" data-review-own-status role="status" hidden></p>
+        <form id="review-form" class="review-form" hidden>
+          <label for="review-name">Naam die bij je review komt<input id="review-name" name="name" type="text" minlength="2" maxlength="40" required autocomplete="off" placeholder="Bijvoorbeeld je voornaam"></label>
+          <label for="review-rating">Jouw beoordeling<select id="review-rating" name="rating" required><option value="">Kies je sterren</option><option value="5">5 sterren — Uitstekend</option><option value="4">4 sterren — Goed</option><option value="3">3 sterren — Gemiddeld</option><option value="2">2 sterren — Minder goed</option><option value="1">1 ster — Niet goed</option></select></label>
+          <label for="review-text">Jouw ervaring<textarea id="review-text" name="text" rows="7" minlength="10" maxlength="1500" required aria-describedby="review-character-count" placeholder="Wat vind je van REVE en de website?"></textarea><span id="review-character-count" class="review-character-count" data-review-character-count>0 / 1500 tekens</span></label>
+          <label class="review-consent" for="review-consent"><input id="review-consent" name="publicConsent" type="checkbox" required><span>Ik wil deze review openbaar delen: mijn gekozen naam, sterren en tekst zijn zichtbaar op de website.</span></label>
+          <button id="review-submit" class="button dark" type="submit">Review plaatsen ↗</button>
+          <button id="review-remove" class="review-remove" type="button" hidden>Mijn review verwijderen</button>
+          <p class="review-save-status" id="review-save-status" role="status" aria-live="polite"></p>
+          <p class="review-privacy">Je kunt één review per account delen en die later aanpassen of verwijderen. Je accountgegevens blijven privé; bij je review staat alleen de naam die je zelf kiest. REVE bewaart geen wachtwoord. Plaats geen adres, telefoonnummer of andere privégegevens in je tekst.</p>
+        </form>
+        <noscript><p>Schakel JavaScript in om reviews te lezen en je ervaring te delen.</p></noscript>
+      </section>
+    </div>
+    <section class="reviews-bottom"><p class="eyebrow">REVE / PERSOONLIJK CONTACT</p><h2>Een vraag?<br>We horen <em>je graag.</em></h2><p>Voor hulp of een vraag over de collectie kun je REVE ook rechtstreeks bellen.</p><a class="button dark" href="tel:+31638207264">Bel REVE · 06 3820 7264 ↗</a></section>
+  </main>
+  <footer>
+    <a class="logo" href="/shop"><img class="brand-logo" src="/reve-logo.svg" alt="REVE"></a>
+    <div class="footer-nav"><a href="/shop#collectie">Collectie</a><a href="/about.html">Ons verhaal</a><a href="/reviews.html" aria-current="page">Reviews</a><a href="/service.html">Klantenservice</a><a href="/track.html">Volg je pakket</a></div>
+    <a href="tel:+31638207264">Bel REVE · 06 3820 7264</a>
+    <p>REVE · Website in ontwikkeling</p>
+  </footer>
+</body>
+</html>
