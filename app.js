@@ -51,6 +51,19 @@ const shape = p.type === "cap" ? '<path d="M90 203Q90 80 200 75Q310 80 310 203Z"
 return '<svg viewBox="0 0 400 400" role="img" aria-label="Illustratie van '+p.name+'"><g fill="'+p.fabric+'" stroke="'+p.fabric+'" stroke-width="2">'+shape+'</g><text x="200" y="'+(p.type==="cap"?172:220)+'" text-anchor="middle" fill="#f4f1ea" font-family="Arial,sans-serif" font-size="'+(p.type==="cap"?18:23)+'" font-weight="bold" letter-spacing="4">REVE</text></svg>';
 }
 const sizesFor = p => p.sizes || (p.type === "cap" ? ["One size"] : ["XS","S","M","L","XL"]);
+const baseCatalog=products.map(p=>({...p}));
+function stockInfo(p){
+const stock=Number.isInteger(p.stock)&&p.stock>=0&&p.stock<=1000000?p.stock:null;
+return {stock,text:stock===null?(p.isOwnerProduct?'Voorraad nog niet opgegeven':'Voorraad nog niet bevestigd'):stock===0?'Uitverkocht':'Nog '+stock+' op voorraad',state:stock===null?'unknown':stock===0?'empty':'available'};
+}
+function stockMarkup(p){const info=stockInfo(p);return '<p class="stock-label stock-'+info.state+'">'+info.text+(info.stock!==null?' · totaal over alle maten':'')+'</p>';}
+async function loadCatalog(){
+const response=await fetch('/api/catalog',{cache:'no-store'});if(!response.ok)throw Error();const data=await response.json();
+const inventory=data.inventory||{};
+products=[...baseCatalog,...(Array.isArray(data.products)?data.products.map(p=>({...p,isOwnerProduct:true})):[])].map(p=>({...p,stock:Number.isInteger(inventory[p.id])&&inventory[p.id]>=0&&inventory[p.id]<=1000000?inventory[p.id]:null}));
+cart=cart.filter(i=>products.some(p=>p.id===i.id&&sizesFor(p).includes(i.size)));renderProducts();updateCart();
+const open=document.getElementById('product-dialog');if(open.open&&open.dataset.productId){const fresh=products.find(p=>p.id===open.dataset.productId);if(fresh)openProduct(fresh);else open.close();}
+}
 let activeFilter="all";
 let cart = [];
 try { const saved=JSON.parse(localStorage.getItem("reve-cart")||"[]"); if(Array.isArray(saved)) cart=saved.filter(i=>typeof i.id==="string"&&["XS","S","M","L","XL","One size","36","37","38","39","40","41","42","43","44","45","46","28","29","30","31","32","33","34","35","116","122","128","134","140","146","152","158","164","170"].includes(i.size)&&Number.isInteger(i.qty)&&i.qty>0&&i.qty<=99); } catch {}
@@ -68,8 +81,8 @@ if(!visible.length){const empty=document.createElement("div");empty.className="n
 visible.forEach(p=>{
 p={...p,name:escapeHTML(p.name),color:escapeHTML(p.color)};
 const card=document.createElement("article");card.className="product-card"+(p.category==="schoenen"?" product-shoe":"");
-card.innerHTML='<div class="product-art" style="--bg:'+p.bg+'"><span class="tag'+(p.isNew?' tag-new':'')+'">'+(p.isNew?'NIEUW REVE-ONTWERP':'FIRST CHAPTER')+'</span>'+illustration(p)+'</div><div class="product-heading"><h3>'+p.name+'</h3><span class="price">'+money(p.price)+'</span></div><p class="color">'+p.color+'</p><div class="product-actions"><select aria-label="Maat voor '+p.name+'">'+sizesFor(p).map(s=>'<option>'+s+'</option>').join("")+'</select><button class="add" type="button">In winkelmand +</button></div>';
-card.querySelector(".add").addEventListener("click",()=>{const size=card.querySelector("select").value;const existing=cart.find(i=>i.id===p.id&&i.size===size);if(existing){if(existing.qty>=99)return;existing.qty++}else cart.push({id:p.id,size,qty:1});saveCart();announce(p.name+" toegevoegd aan je winkelmand.");});
+card.innerHTML='<div class="product-art" style="--bg:'+p.bg+'"><span class="tag'+(p.isNew?' tag-new':'')+'">'+(p.isNew?'NIEUW REVE-ONTWERP':'FIRST CHAPTER')+'</span>'+illustration(p)+'</div><div class="product-heading"><h3>'+p.name+'</h3><span class="price">'+money(p.price)+'</span></div><p class="color">'+p.color+'</p>'+stockMarkup(p)+'<div class="product-actions"><select aria-label="Maat voor '+p.name+'">'+sizesFor(p).map(s=>'<option>'+s+'</option>').join("")+'</select><button class="add" type="button"'+(p.stock===0?' disabled':'')+'>'+(p.stock===0?'Uitverkocht':'In winkelmand +')+'</button></div>';
+card.querySelector(".add").addEventListener("click",()=>{const current=products.find(product=>product.id===p.id);if(!current||current.stock===0){announce('Dit product is uitverkocht.');return}const size=card.querySelector("select").value;const existing=cart.find(i=>i.id===p.id&&i.size===size);if(existing){if(existing.qty>=99)return;existing.qty++}else cart.push({id:p.id,size,qty:1});saveCart();announce(current.name+" toegevoegd aan je winkelmand.");});
 const detail=document.createElement("button");detail.className="detail-button";detail.textContent="Bekijk product ↗";detail.setAttribute("aria-label","Bekijk "+p.name);detail.onclick=()=>openProduct(p);card.querySelector(".product-art").append(detail);
 grid.append(card);
 });
@@ -93,11 +106,14 @@ dialog.addEventListener("click",event=>{const r=dialog.getBoundingClientRect();i
 document.getElementById("year").textContent=new Date().getFullYear();
 renderProducts();updateCart();
 function openProduct(p){
+p=products.find(product=>product.id===p.id)||p;
+const productDialog=document.getElementById('product-dialog'),previousSize=productDialog.open&&productDialog.dataset.productId===p.id?document.getElementById('detail-size')?.value:null;
 p={...p,name:escapeHTML(p.name),color:escapeHTML(p.color)};
 const content=document.getElementById("product-content");
-content.innerHTML='<div class="product-art'+(p.category==="schoenen"?' product-shoe':'')+'" style="--bg:'+p.bg+'">'+illustration(p)+'</div><h2 id="product-title">'+p.name+'</h2><p>'+p.color+' · '+money(p.price)+'</p><p class="product-description">'+(p.description?escapeHTML(p.description):p.type==='hoodie'?'Een ontspannen hoodie voor rustige ochtenden en lange avonden.':p.type==='cap'?'Een rustig accent voor je dagelijkse outfit.':'Een eenvoudig shirt met het REVE-logo, ontworpen als basis voor jouw eigen stijl.')+'</p><p class="concept-note">Ontwerpconcept. Materiaal, pasvorm en afmetingen worden bevestigd voor de verkoop start.</p><label class="size-label">Kies je maat<select id="detail-size">'+sizesFor(p).map(s=>'<option>'+s+'</option>').join('')+'</select></label><button id="detail-add" class="button dark">In winkelmand +</button>';
-document.getElementById('detail-add').onclick=()=>{const size=document.getElementById('detail-size').value;const existing=cart.find(i=>i.id===p.id&&i.size===size);if(existing&&existing.qty>=99){announce('Je hebt het maximum aantal voor deze maat bereikt.');return}if(existing)existing.qty++;else cart.push({id:p.id,size,qty:1});saveCart();announce(p.name+' toegevoegd aan je winkelmand.');};
-document.getElementById('product-dialog').showModal();
+content.innerHTML='<div class="product-art'+(p.category==="schoenen"?' product-shoe':'')+'" style="--bg:'+p.bg+'">'+illustration(p)+'</div><h2 id="product-title">'+p.name+'</h2><p>'+p.color+' · '+money(p.price)+'</p>'+stockMarkup(p)+(stockInfo(p).stock!==null?'<p class="stock-note">Totaal over alle maten, bijgehouden door REVE. Een winkelmand reserveert geen voorraad.</p>':'')+'<p class="product-description">'+(p.description?escapeHTML(p.description):p.type==='hoodie'?'Een ontspannen hoodie voor rustige ochtenden en lange avonden.':p.type==='cap'?'Een rustig accent voor je dagelijkse outfit.':'Een eenvoudig shirt met het REVE-logo, ontworpen als basis voor jouw eigen stijl.')+'</p>'+(p.isOwnerProduct?'':'<p class="concept-note">Ontwerpconcept. Materiaal, pasvorm en afmetingen worden bevestigd voor de verkoop start.</p>')+'<label class="size-label">Kies je maat<select id="detail-size">'+sizesFor(p).map(s=>'<option>'+s+'</option>').join('')+'</select></label><button id="detail-add" class="button dark"'+(p.stock===0?' disabled':'')+'>'+(p.stock===0?'Uitverkocht':'In winkelmand +')+'</button>';
+document.getElementById('detail-add').onclick=()=>{const current=products.find(product=>product.id===p.id);if(!current||current.stock===0){announce('Dit product is uitverkocht.');return}const size=document.getElementById('detail-size').value;const existing=cart.find(i=>i.id===p.id&&i.size===size);if(existing&&existing.qty>=99){announce('Je hebt het maximum aantal voor deze maat bereikt.');return}if(existing)existing.qty++;else cart.push({id:p.id,size,qty:1});saveCart();announce(current.name+' toegevoegd aan je winkelmand.');};
+if(previousSize&&sizesFor(p).includes(previousSize))document.getElementById('detail-size').value=previousSize;
+productDialog.dataset.productId=p.id;if(!productDialog.open)productDialog.showModal();
 }
 document.getElementById('close-product').onclick=()=>document.getElementById('product-dialog').close();
 document.getElementById('search').addEventListener('input',()=>renderProducts());
@@ -105,7 +121,8 @@ document.getElementById('sort').addEventListener('change',()=>renderProducts());
 document.getElementById('clear-cart').onclick=()=>{cart=[];saveCart();announce('Je winkelmand is leeggemaakt.');document.getElementById('continue-shopping').focus();};
 window.addEventListener('storage',event=>{if(event.key==='reve-cart'){try{const data=JSON.parse(event.newValue||'[]');cart=Array.isArray(data)?data.filter(i=>products.some(p=>p.id===i.id&&sizesFor(p).includes(i.size))&&Number.isInteger(i.qty)&&i.qty>0&&i.qty<=99):[];updateCart();}catch{}}});
 
-(async()=>{try{const response=await fetch('/api/catalog');if(!response.ok)throw Error();const data=await response.json();products=[...products,...data.products];cart=cart.filter(i=>products.some(p=>p.id===i.id&&sizesFor(p).includes(i.size)));renderProducts();updateCart();}catch{const note=document.createElement('p');note.className='concept-note';note.textContent='Eigen producten konden niet worden geladen. Vernieuw de pagina om opnieuw te proberen.';document.getElementById('products').before(note)}try{const response=await fetch('/api/catalog?me=1');const data=await response.json();document.getElementById('admin-link').hidden=!data.isOwner;}catch{}})();
+(async()=>{try{await loadCatalog();}catch{const note=document.createElement('p');note.className='concept-note';note.textContent='Producten en voorraad konden niet worden vernieuwd. Vernieuw de pagina om opnieuw te proberen.';document.getElementById('products').before(note)}try{const response=await fetch('/api/catalog?me=1',{cache:'no-store'});const data=await response.json();document.getElementById('admin-link').hidden=!data.isOwner;}catch{}})();
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')loadCatalog().catch(()=>{});});
 
 document.getElementById('show-core').onclick=()=>document.querySelector('[data-filter=core]').click();
 
