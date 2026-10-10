@@ -55,3 +55,40 @@
 
 /* REVE service and honest launch status */
 .order-count{display:flex;align-items:center;gap:22px;padding:22px 0;margin-top:24px;border-top:1px solid #d4cebf}.order-count>strong{font-size:52px;font-weight:400;line-height:1}.order-count span{font-size:12px;font-weight:500}.order-count p{font-size:11px;line-height:1.7;color:var(--muted);max-width:280px;margin:8px 0 0}.service-overview{display:inline-block;font-size:12px;text-decoration:underline;text-underline-offset:5px;margin-top:10px}.brand-signoff{padding:50px 6% 40px;background:#ebe5d9;overflow:hidden}.brand-signoff>span{display:block;text-align:center;letter-spacing:2px;font-size:9px;margin-bottom:35px}.brand-signoff>img{display:block;width:min(900px,85%);height:auto;margin:auto}.service-page{max-width:1200px;padding:75px 6% 90px;margin:auto}.service-page h1{font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-3px;line-height:1.06}.service-intro{max-width:570px;font-size:15px;line-height:1.9;color:var(--muted)}.service-status{display:grid;grid-template-columns:1.3fr 1fr;align-items:center;gap:50px;padding:35px;background:#ece7dd;margin:40px 0 55px}.service-status h2{font-size:36px}.service-status>div>p:not(.eyebrow){font-size:13px;line-height:1.8;color:var(--muted);max-width:450px}.service-status .order-count{margin:0;padding:0;border:0}.service-page-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px 60px;margin-bottom:50px}.service-page-grid>article{border-top:1px solid #d4cebf;padding-top:24px}.service-page-grid h2{font-size:26px;letter-spacing:-.5px;margin-top:18px}.service-page-grid p{font-size:13px;line-height:1.9;color:var(--muted)}.service-phone{font-size:25px;letter-spacing:-.5px;display:inline-block;margin:12px 0}.service-phone:hover{text-decoration:underline}.service-page-grid .concept-note{font-size:11px}@media(max-width:750px){.brand-signoff{padding:35px 5%}.brand-signoff>span{font-size:8px;letter-spacing:1px;margin-bottom:25px}.brand-signoff>img{width:95%}.service-page{padding:40px 7%}.service-status{grid-template-columns:1fr;padding:25px;gap:25px}.service-status .order-count{border-top:1px solid #d4cebf;padding-top:25px}.service-page-grid{grid-template-columns:1fr;gap:30px}.service-page h1{font-size:51px}}
+
+/* REVE Rose Capsule: original merch concepts, complete products in view. */
+.rose-capsule{max-width:1350px;margin:70px auto 0;background:#eee4e1;color:var(--ink)}
+.rose-main{display:grid;grid-template-columns:1fr 1.15fr;align-items:stretch}
+.rose-copy{padding:65px 11%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.rose-copy .eyebrow{font-size:9px;letter-spacing:1.4px;color:#6e5655}
+.rose-copy h2{font-size:clamp(37px,4vw,58px);line-height:1.08;letter-spacing:-2px;margin:15px 0 22px}
+.rose-copy h2 em{color:#785a5b}
+.rose-copy>p:not(.eyebrow){font-size:14px;line-height:1.9;color:#6c6560;max-width:420px;margin:0}
+.rose-palette{display:flex;align-items:center;gap:8px;margin:28px 0 32px}
+.rose-palette>span{width:18px;height:18px;border-radius:50%;border:1px solid #25292214}
+.rose-palette .rose-swatch{background:#c6a7a8}.rose-palette .cream-swatch{background:#eee8dc}
+.rose-palette small{margin-left:8px;font-size:8px;letter-spacing:1.3px;color:#6e5655}
+.rose-actions{display:grid;gap:20px;justify-items:start}
+.rose-actions .button{font-size:12px;gap:28px}
+.rose-actions>a:not(.button){font-size:11px;text-decoration:underline;text-underline-offset:5px}
+.rose-shoe{display:flex;flex-direction:column;position:relative;min-width:0;background:#e9e1d9;border:0;padding:30px;text-align:left;color:var(--ink)}
+.rose-product-label{font-size:9px;letter-spacing:1.5px;color:#6e5655;position:relative;z-index:1}
+.rose-shoe>img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;min-height:0;margin:12px 0;transition:transform .3s}
+.rose-shoe:hover>img{transform:scale(1.025)}
+.rose-shoe-name{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;font-size:18px;font-weight:500;margin-top:auto;padding:16px 0 0;border-top:1px solid #cfc3be}
+.rose-shoe-name b,.rose-merch b{font-weight:400}
+.rose-merch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;border-top:1px solid #d4c6c1;background:#d4c6c1}
+.rose-merch>button{background:#f1eae4;min-width:0;border:0;padding:20px 20px 22px;text-align:left;color:var(--ink)}
+.rose-merch img{display:block;width:100%;aspect-ratio:1;object-fit:contain;transition:transform .3s}
+.rose-merch button:hover img{transform:scale(1.025)}
+.rose-merch button>span{display:block;padding:18px 0 0}
+.rose-merch small{display:block;font-size:8px;letter-spacing:1px;color:#785a5b;margin-bottom:11px}
+.rose-merch strong{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;line-height:1.5;font-weight:500}
+.rose-shoe:focus-visible,.rose-merch button:focus-visible{outline:2px solid #785a5b;outline-offset:-4px}
+.rose-note{margin:0;padding:20px 30px!important;color:#6c6560;font-size:10px!important;line-height:1.8}
+.new-look.rose .look-copy{border-top-color:#bd999b}.new-look.rose .look-new{background:#785a5b}
+#rose-capsule,#rose-look{scroll-margin-top:120px}
+@media(max-width:1400px){.rose-capsule{margin-left:5%;margin-right:5%}}
+@media(max-width:1000px){.rose-copy{padding:42px 9%}.rose-copy h2{font-size:40px}.rose-shoe{padding:24px}.rose-merch>button{padding:16px}.rose-merch strong{font-size:12px}.rose-actions .button{gap:12px}}
+@media(max-width:750px){.rose-capsule{margin-top:35px}.rose-main{grid-template-columns:1fr}.rose-copy{padding:35px 8%}.rose-copy h2{font-size:39px;letter-spacing:-1.5px}.rose-copy>p:not(.eyebrow){font-size:13px}.rose-palette{margin:22px 0 25px}.rose-shoe{padding:22px}.rose-shoe>img{aspect-ratio:5/4;max-height:420px}.rose-shoe-name{font-size:19px}.rose-merch{grid-template-columns:repeat(2,minmax(0,1fr))}.rose-merch>button{padding:15px}.rose-merch strong{font-size:12px}.rose-note{padding:20px!important}#rose-capsule,#rose-look{scroll-margin-top:145px}}
+@media(max-width:400px){.rose-copy{padding:30px 7%}.rose-copy h2{font-size:35px}.rose-actions .button{width:100%;font-size:11px;gap:12px}.rose-merch>button{padding:12px}.rose-merch strong{font-size:11px}.rose-merch small{font-size:7px;letter-spacing:.5px}.rose-shoe-name{font-size:17px}.rose-palette small{font-size:7px;letter-spacing:.8px}}

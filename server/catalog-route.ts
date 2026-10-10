@@ -4,7 +4,7 @@ const runtime=()=>env as unknown as {BUCKET:R2Bucket;REVE_OWNER_EMAIL?:string};
 const reply=(data:unknown,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 async function owner(){const u=await getChatGPTUser();return !!u&&!!runtime().REVE_OWNER_EMAIL&&u.email.toLowerCase()===runtime().REVE_OWNER_EMAIL!.toLowerCase();}
 export async function GET(request:Request){try{
-const url=new URL(request.url);if(url.searchParams.get('me'))return reply({isOwner:await owner()});
+const url=new URL(request.url);if(url.searchParams.get('me'))return reply({authenticated:!!(await getChatGPTUser()),isOwner:await owner()});
 const image=url.searchParams.get('image');if(image){if(!/^[a-f0-9-]+\.(png|jpg|webp)$/.test(image))return new Response('Niet gevonden',{status:404});const object=await runtime().BUCKET.get('images/'+image);if(!object)return new Response('Niet gevonden',{status:404});return new Response(object.body,{headers:{'Content-Type':object.httpMetadata?.contentType||'application/octet-stream','X-Content-Type-Options':'nosniff','Cache-Control':'private, max-age=3600'}});}
 const admin=url.searchParams.get('admin')==='1';if(admin&&!(await owner()))return reply({error:'Alleen de eigenaar mag beheren.'},403);
 let cursor:string|undefined;const products:any[]=[];do{const list=await runtime().BUCKET.list({prefix:'products/',cursor});for(const entry of list.objects){const object=await runtime().BUCKET.get(entry.key);if(object){const p=await object.json<any>();if(admin||!p.archived)products.push(p);}}cursor=list.truncated?list.cursor:undefined;}while(cursor);return reply({products});
