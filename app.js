@@ -2590,10 +2590,11 @@ const summerShortProducts = [
   }
 ];
 products=[...capsuleProducts,...summerShortProducts,...products];
-const money = value => new Intl.NumberFormat("nl-NL",{style:"currency",currency:"EUR"}).format(value/100);
+const currencyFormatter = new Intl.NumberFormat("nl-NL",{style:"currency",currency:"EUR"});
+const money = value => currencyFormatter.format(value/100);
 const escapeHTML=value=>String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;", "'":"&#39;"}[c]));
 function illustration(p) {
-if(p.image)return '<img class="product-photo" src="'+escapeHTML(p.image)+'" alt="'+escapeHTML(p.name)+'" loading="lazy">';
+if(p.image)return '<img class="product-photo" src="'+escapeHTML(p.image)+'" alt="'+escapeHTML(p.name)+'" loading="lazy" decoding="async">';
 const shape = p.type === "cap" ? '<path d="M90 203Q90 80 200 75Q310 80 310 203Z"/><path d="M90 200Q180 178 310 203L355 248Q260 285 80 229Z"/><path d="M200 80V195" fill="none" stroke="#000" stroke-opacity=".12"/>' : p.type === "hoodie" ? '<path d="M151 108Q150 42 200 42Q250 42 249 108L300 130 350 305 288 321 265 220 273 354H127L135 220 112 321 50 305 100 130Z"/><path d="M151 108Q200 155 249 108M150 285h100l12 43H138Z" fill="none" stroke="#000" stroke-opacity=".15"/><path d="M181 135v65m38-65v65" stroke="#f5f1e8" stroke-width="3"/>' : '<path d="M144 90 100 110 48 195 113 228 133 198 124 344Q200 363 276 344L267 198 287 228 352 195 300 110 256 90 232 82Q200 103 168 82Z"/><path d="M168 83Q200 125 232 83" fill="none" stroke="#000" stroke-opacity=".15" stroke-width="7"/>';
 return '<svg viewBox="0 0 400 400" role="img" aria-label="Illustratie van '+p.name+'"><g fill="'+p.fabric+'" stroke="'+p.fabric+'" stroke-width="2">'+shape+'</g><text x="200" y="'+(p.type==="cap"?172:220)+'" text-anchor="middle" fill="#f4f1ea" font-family="Arial,sans-serif" font-size="'+(p.type==="cap"?18:23)+'" font-weight="bold" letter-spacing="4">REVE</text></svg>';
 }
@@ -2651,7 +2652,7 @@ document.getElementById("cart-total").textContent=money(total);
 document.getElementById("clear-cart").hidden=!cart.length;
 }
 let toastTimer;
-function announce(message){const status=document.getElementById("status");status.textContent=message;status.classList.add("visible");clearTimeout(toastTimer);toastTimer=setTimeout(()=>status.classList.remove("visible"),2500);}
+function announce(message){const status=document.getElementById("status");status.textContent=message;const feedback=document.getElementById("detail-feedback");if(feedback&&document.getElementById("product-dialog").open)feedback.textContent=message;status.classList.add("visible");clearTimeout(toastTimer);toastTimer=setTimeout(()=>status.classList.remove("visible"),2500);}
 document.querySelectorAll("[data-filter]").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll("[data-filter]").forEach(b=>{b.classList.toggle("active",b===button);b.setAttribute("aria-pressed",String(b===button))});renderProducts(button.dataset.filter);}));
 const dialog=document.getElementById("cart");
 document.getElementById("open-cart").addEventListener("click",()=>dialog.showModal());
