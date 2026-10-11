@@ -442,7 +442,7 @@ html:has(.refined-storefront) { scroll-padding-top: 108px; }
 .refined-storefront [hidden] { display: none !important; }
 .refined-storefront .quick-browse { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1600px; margin: 0 auto; padding: 0 var(--gutter); gap: 24px; border-bottom: 1px solid var(--line); }
 .refined-storefront .quick-browse a { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 64px; font-size: 12px; text-decoration: none; }
-.refined-storefront .quick-browse a::after { content: '↗'; color: #63745a; }
+.refined-storefront .quick-browse a > span { color: #63745a; }
 .refined-storefront .quick-browse a:hover { color: #506248; }
 .refined-storefront .collection { padding-top: 52px; }
 .refined-storefront .collection .section-heading h2 { font-size: clamp(32px, 3.2vw, 46px); }
