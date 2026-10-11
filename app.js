@@ -2613,12 +2613,13 @@ cart=cart.filter(i=>products.some(p=>p.id===i.id&&sizesFor(p).includes(i.size)))
 const open=document.getElementById('product-dialog');if(open.open&&open.dataset.productId){const fresh=products.find(p=>p.id===open.dataset.productId);if(fresh)openProduct(fresh);else open.close();}
 }
 let activeFilter="all";
-let displayLimit=24;
+const productPageSize=12;
+let displayLimit=productPageSize;
 let cart = [];
 try { const saved=JSON.parse(localStorage.getItem("reve-cart")||"[]"); if(Array.isArray(saved)) cart=saved.filter(i=>typeof i.id==="string"&&["XS","S","M","L","XL","One size","36","37","38","39","40","41","42","43","44","45","46","28","29","30","31","32","33","34","35","116","122","128","134","140","146","152","158","164","170"].includes(i.size)&&Number.isInteger(i.qty)&&i.qty>0&&i.qty<=99); } catch {}
 function saveCart(){try{localStorage.setItem("reve-cart",JSON.stringify(cart))}catch{} updateCart();}
 function renderProducts(filter=activeFilter,keepPage=false){
-activeFilter=filter;if(!keepPage)displayLimit=24;
+activeFilter=filter;if(!keepPage)displayLimit=productPageSize;
 const grid=document.getElementById("products");
 const selectedSizes=keepPage?new Map(Array.from(grid.children).filter(card=>card.dataset.productId).map(card=>[card.dataset.productId,card.querySelector('select')?.value])):new Map();
 grid.replaceChildren();
@@ -2630,7 +2631,7 @@ const visible=products.filter(p=>(filter==="all"||p.category===filter||(filter==
 visible.sort((a,b)=>sort==="low"?a.price-b.price:sort==="high"?b.price-a.price:sort==="name"?a.name.localeCompare(b.name):0);
 const showing=Math.min(displayLimit,visible.length);
 document.getElementById("result-count").textContent=visible.length+" producten"+(showing<visible.length?" · "+showing+" getoond":"");
-const more=document.getElementById("load-more-products"),pager=document.getElementById("products-pager");if(more){more.hidden=showing>=visible.length;more.textContent="Meer ontwerpen tonen ("+Math.min(24,Math.max(0,visible.length-showing))+")";}if(pager)pager.hidden=showing>=visible.length;
+const more=document.getElementById("load-more-products"),pager=document.getElementById("products-pager");if(more){more.hidden=showing>=visible.length;more.textContent="Meer ontwerpen tonen ("+Math.min(productPageSize,Math.max(0,visible.length-showing))+")";}if(pager)pager.hidden=showing>=visible.length;
 if(!visible.length){const empty=document.createElement("div");empty.className="no-results";empty.innerHTML=["jongens","meisjes"].includes(audience)?"<h3>De kindercollectie komt later.</h3><p>Er zijn nog geen REVE-producten voor deze selectie. Bekijk ondertussen de volwassen ontwerpcollectie.</p>":"<h3>Geen kledingstukken gevonden.</h3><p>Probeer een andere zoekterm of bekijk de hele collectie.</p>";const reset=document.createElement("button");reset.className="button dark";reset.textContent="Toon alles";reset.onclick=()=>{document.getElementById("audience").value="all";if(document.getElementById("capsule"))document.getElementById("capsule").value="all";document.getElementById("search").value="";document.querySelector('[data-filter="all"]').click()};empty.append(reset);grid.append(empty);}
 visible.slice(0,displayLimit).forEach(p=>{
 p={...p,name:escapeHTML(p.name),color:escapeHTML(p.color)};
@@ -2700,7 +2701,7 @@ document.querySelectorAll('[data-preview]').forEach(button=>button.addEventListe
 
 // Browse the larger collection without loading every product at once.
 document.getElementById("capsule").addEventListener("change",()=>renderProducts());
-document.getElementById("load-more-products").addEventListener("click",()=>{const previous=displayLimit;displayLimit+=24;renderProducts(activeFilter,true);const firstNew=document.querySelectorAll("#products .product-card")[previous];if(firstNew){firstNew.querySelector(".detail-button").focus({preventScroll:true});firstNew.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}announce("Meer REVE-ontwerpen getoond.");});
+document.getElementById("load-more-products").addEventListener("click",()=>{const previous=displayLimit;displayLimit+=productPageSize;renderProducts(activeFilter,true);const firstNew=document.querySelectorAll("#products .product-card")[previous];if(firstNew){firstNew.querySelector(".detail-button").focus({preventScroll:true});firstNew.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}announce("Meer REVE-ontwerpen getoond.");});
 document.querySelectorAll("[data-capsule]").forEach(button=>button.addEventListener("click",()=>{document.getElementById("capsule").value=button.dataset.capsule;document.getElementById("audience").value="all";document.getElementById("search").value="";document.querySelector('[data-filter="all"]').click();document.getElementById("capsule").focus({preventScroll:true});document.getElementById("catalog-controls").scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}));
 
 document.querySelectorAll("[data-short-discover]").forEach(button=>button.addEventListener("click",()=>{document.getElementById("search").value="Summer Shorts";document.getElementById("audience").value="all";document.getElementById("capsule").value="all";document.querySelector('[data-filter="broeken"]').click();document.getElementById("search").focus({preventScroll:true});document.getElementById("catalog-controls").scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}));

@@ -27,10 +27,39 @@
   const desktop = window.matchMedia('(min-width: 1101px)');
   desktop.addEventListener('change', event => { if (event.matches) setMenu(false); });
 
+  const filterToggle = document.getElementById('toggle-filters');
+  const filterPanel = document.getElementById('filter-panel');
+  const filterCount = document.getElementById('filter-count');
+  let activeAdvancedFilters = 0;
+  function describeFilters() {
+    if (!filterToggle || !filterPanel) return;
+    const action = filterPanel.hidden ? 'Filters openen' : 'Filters sluiten';
+    const count = activeAdvancedFilters
+      ? ', ' + activeAdvancedFilters + (activeAdvancedFilters === 1 ? ' actief filter' : ' actieve filters')
+      : ', geen extra filters actief';
+    filterToggle.setAttribute('aria-label', action + count);
+  }
+  function setFiltersOpen(open) {
+    if (!filterToggle || !filterPanel) return;
+    filterPanel.hidden = !open;
+    filterToggle.setAttribute('aria-expanded', String(open));
+    describeFilters();
+  }
+  if (filterToggle && filterPanel) {
+    filterToggle.hidden = false;
+    setFiltersOpen(false);
+    filterToggle.addEventListener('click', () => setFiltersOpen(filterPanel.hidden));
+    // Open before app.js applies the capsule selection and focuses its control.
+    document.addEventListener('click', event => {
+      if (event.target instanceof Element && event.target.closest('[data-capsule]')) setFiltersOpen(true);
+    }, true);
+  }
+
   function updateSelection() {
     const capsule = document.getElementById('capsule');
     const audience = document.getElementById('audience');
     const search = document.getElementById('search');
+    if (!capsule || !audience || !search) return;
     const active = document.querySelector('[data-filter].active');
     document.querySelectorAll('[data-capsule]').forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.capsule === capsule.value));
@@ -41,8 +70,17 @@
     if (audience.value !== 'all') selected.push(audience.selectedOptions[0].textContent);
     if (search.value.trim()) selected.push('“' + search.value.trim() + '”');
     const summary = document.getElementById('selection-summary');
-    summary.hidden = !selected.length;
-    summary.querySelector('p').textContent = selected.join(' / ');
+    if (summary) {
+      summary.hidden = !selected.length;
+      const text = summary.querySelector('p');
+      if (text) text.textContent = selected.join(' / ');
+    }
+    activeAdvancedFilters = Number(capsule.value !== 'all') + Number(audience.value !== 'all');
+    if (filterCount) {
+      filterCount.textContent = String(activeAdvancedFilters);
+      filterCount.hidden = activeAdvancedFilters === 0;
+    }
+    describeFilters();
   }
   document.getElementById('reset-filters').addEventListener('click', () => {
     ['capsule', 'audience'].forEach(id => { document.getElementById(id).value = 'all'; });
@@ -88,27 +126,35 @@
   dialogs.forEach(dialog => dialogObserver.observe(dialog, {attributes: true, attributeFilter: ['open']}));
   reflectDialogs();
 
+  const defaultLooks = 3;
   const lookCards = Array.from(document.querySelectorAll('#looks-grid .look-card'));
   const more = document.getElementById('show-all-looks');
   function showLooks(all) {
-    lookCards.forEach((card, index) => { card.hidden = !all && index >= 6; });
-    more.setAttribute('aria-expanded', String(all));
-    more.innerHTML = (all ? 'Toon minder setjes' : 'Bekijk alle ' + lookCards.length + ' setjes') + ' <span aria-hidden="true">' + (all ? '−' : '↗') + '</span>';
-    document.getElementById('looks-count').textContent = all ? 'Alle ' + lookCards.length + ' REVE-setjes.' : 'Een selectie van 6 setjes uit de collectie.';
+    lookCards.forEach((card, index) => { card.hidden = !all && index >= defaultLooks; });
+    if (more) {
+      more.setAttribute('aria-expanded', String(all));
+      more.innerHTML = (all ? 'Toon minder setjes' : 'Bekijk alle ' + lookCards.length + ' setjes') + ' <span aria-hidden="true">' + (all ? '−' : '↗') + '</span>';
+    }
+    const count = document.getElementById('looks-count');
+    if (count) count.textContent = all ? 'Alle ' + lookCards.length + ' REVE-setjes.' : 'Een selectie van ' + Math.min(defaultLooks, lookCards.length) + ' setjes uit de collectie.';
   }
-  if (lookCards.length > 6) {
-    more.parentElement.hidden = false;
+  if (more && lookCards.length > defaultLooks) {
+    if (more.parentElement) more.parentElement.hidden = false;
     showLooks(false);
     more.addEventListener('click', () => {
       const expanding = more.getAttribute('aria-expanded') !== 'true';
       showLooks(expanding);
-      if (expanding) lookCards[6].querySelector('[data-look]').focus({preventScroll: true});
-      else document.getElementById('looks-title').scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
+      if (expanding) lookCards[defaultLooks]?.querySelector('[data-look]')?.focus({preventScroll: true});
+      else document.getElementById('looks-title')?.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
     });
   }
   function exposeAnchor(hash) {
     if (!hash || !/^#[a-z0-9-]+$/i.test(hash)) return;
     const target = document.getElementById(hash.slice(1));
+    if (!target) return;
+    for (let ancestor = target; ancestor; ancestor = ancestor.parentElement) {
+      if (ancestor.tagName === 'DETAILS') ancestor.open = true;
+    }
     if (target?.closest('.look-card[hidden]')) showLooks(true);
   }
   document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', () => exposeAnchor(link.getAttribute('href'))));
