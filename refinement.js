@@ -7,10 +7,33 @@
   document.body.classList.add('menu-ready');
   header.classList.add('menu-ready');
   menu.hidden = false;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function enter(element, className = 'ui-enter') {
+    if (!element || reducedMotion.matches) return;
+    element.classList.add(className);
+    const finish = event => {
+      if (event.target !== element) return;
+      element.classList.remove(className);
+      element.removeEventListener('animationend', finish);
+      element.removeEventListener('animationcancel', finish);
+    };
+    element.addEventListener('animationend', finish);
+    element.addEventListener('animationcancel', finish);
+  }
+  let scrollFrame = 0;
+  function reflectScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 20);
+    scrollFrame = 0;
+  }
+  window.addEventListener('scroll', () => {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(reflectScroll);
+  }, {passive: true});
+  reflectScroll();
   function setMenu(open, returnFocus = false) {
     header.classList.toggle('menu-open', open);
     menu.setAttribute('aria-expanded', String(open));
     menu.querySelector('span:last-child').textContent = open ? 'Sluiten' : 'Menu';
+    if (open) enter(nav);
     if (returnFocus) menu.focus();
   }
   menu.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true'));
@@ -43,6 +66,7 @@
     if (!filterToggle || !filterPanel) return;
     filterPanel.hidden = !open;
     filterToggle.setAttribute('aria-expanded', String(open));
+    if (open) enter(filterPanel);
     describeFilters();
   }
   if (filterToggle && filterPanel) {
@@ -89,8 +113,26 @@
     document.querySelector('[data-filter="all"]').click();
     document.getElementById('search').focus({preventScroll: true});
   });
-  new MutationObserver(updateSelection).observe(document.getElementById('products'), {childList: true});
+  const productGrid = document.getElementById('products');
+  const revealedProducts = new Set();
+  function revealProducts() {
+    const editingFilters = document.activeElement?.matches('input, select');
+    let position = 0;
+    productGrid.querySelectorAll('.product-card').forEach(card => {
+      const id = card.dataset.productId;
+      if (!id || revealedProducts.has(id)) return;
+      revealedProducts.add(id);
+      if (editingFilters || reducedMotion.matches) return;
+      card.style.setProperty('--enter-delay', (Math.min(position++, 3) * 30) + 'ms');
+      enter(card, 'product-enter');
+    });
+  }
+  new MutationObserver(() => {
+    updateSelection();
+    revealProducts();
+  }).observe(productGrid, {childList: true});
   updateSelection();
+  revealProducts();
 
   const productDialog = document.getElementById('product-dialog');
   const productContent = document.getElementById('product-content');
@@ -121,7 +163,16 @@
     if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) productDialog.close();
   });
   const dialogs = Array.from(document.querySelectorAll('dialog'));
-  const reflectDialogs = () => document.body.classList.toggle('dialog-open', dialogs.some(dialog => dialog.open));
+  const openedDialogs = new WeakSet();
+  const reflectDialogs = () => {
+    document.body.classList.toggle('dialog-open', dialogs.some(dialog => dialog.open));
+    dialogs.forEach(dialog => {
+      if (dialog.open) {
+        if (!openedDialogs.has(dialog)) enter(dialog);
+        openedDialogs.add(dialog);
+      } else openedDialogs.delete(dialog);
+    });
+  };
   const dialogObserver = new MutationObserver(reflectDialogs);
   dialogs.forEach(dialog => dialogObserver.observe(dialog, {attributes: true, attributeFilter: ['open']}));
   reflectDialogs();

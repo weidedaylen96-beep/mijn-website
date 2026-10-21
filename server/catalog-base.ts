@@ -1,6 +1,87 @@
 // Public catalogue identities for owner-managed stock. Keep in sync with public/app.js.
 export const baseProducts = [
   {
+    "id": "studio-chrome-tee",
+    "name": "REVE Studio Chrome Backprint Tee",
+    "image": "/studio/studio-chrome-tee.webp",
+    "category": "shirts",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": "studio-silver-hoodie",
+    "name": "REVE Studio Silver Hoodie",
+    "image": "/studio/studio-silver-hoodie.webp",
+    "category": "hoodies",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": "studio-silver-jogger",
+    "name": "REVE Studio Silver Jogger",
+    "image": "/studio/studio-silver-jogger.webp",
+    "category": "broeken",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": "studio-track-shorts",
+    "name": "REVE Studio Track Shorts",
+    "image": "/studio/studio-track-shorts.webp",
+    "category": "broeken",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": "studio-signature-cap",
+    "name": "REVE Studio Signature Cap",
+    "image": "/studio/studio-signature-cap.webp",
+    "category": "petjes",
+    "sizes": [
+      "One size"
+    ]
+  },
+  {
+    "id": "studio-sling-bag",
+    "name": "REVE Studio Sling Bag",
+    "image": "/studio/studio-sling-bag.webp",
+    "category": "accessoires",
+    "sizes": [
+      "One size"
+    ]
+  },
+  {
+    "id": "studio-rib-socks",
+    "name": "REVE Studio Rib Socks",
+    "image": "/studio/studio-rib-socks.webp",
+    "category": "accessoires",
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ]
+  },
+  {
     "id": "drop100-stone-tee",
     "name": "REVE Stone Box Tee",
     "image": "/merch100/drop100-stone-tee.webp",

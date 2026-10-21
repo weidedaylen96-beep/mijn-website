@@ -2591,6 +2591,174 @@ const summerShortProducts = [
 ];
 products=[...capsuleProducts,...summerShortProducts,...products];
 const currencyFormatter = new Intl.NumberFormat("nl-NL",{style:"currency",currency:"EUR"});
+// REVE Studio / Chrome Edit — visual concepts, no manufactured stock is implied.
+products.unshift(...[
+  {
+    "audience": "unisex",
+    "drop": "06",
+    "isNew": true,
+    "studioEdit": true,
+    "capsule": "studio",
+    "capsuleName": "REVE Studio — Chrome Edit",
+    "bg": "#f1efe8",
+    "fabric": "#424441",
+    "id": "studio-chrome-tee",
+    "name": "REVE Studio Chrome Backprint Tee",
+    "color": "Washed black / chroomeffect",
+    "category": "shirts",
+    "type": "tee",
+    "price": 4495,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "description": "Een REVE-ontwerpconcept met een grote rugprint in chroomeffect. Het zwarte shirt vormt met de Studio Track Shorts een bijpassend setje. De afbeelding toont de achterkant; stof, pasvorm en definitieve uitvoering worden nog bevestigd.",
+    "image": "/studio/studio-chrome-tee.webp"
+  },
+  {
+    "audience": "unisex",
+    "drop": "06",
+    "isNew": true,
+    "studioEdit": true,
+    "capsule": "studio",
+    "capsuleName": "REVE Studio — Chrome Edit",
+    "bg": "#f1efe8",
+    "fabric": "#424441",
+    "id": "studio-silver-hoodie",
+    "name": "REVE Studio Silver Hoodie",
+    "color": "Ash grey / silver",
+    "category": "hoodies",
+    "type": "hoodie",
+    "price": 7995,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "description": "Een REVE-ontwerpconcept voor een ruime hoodie in ash grey met een subtiel logo in zilverkleur. Combineer met de Studio Silver Jogger voor het bijpassende grijze pakje. Materiaal en pasvorm worden bevestigd voor de verkoop.",
+    "image": "/studio/studio-silver-hoodie.webp"
+  },
+  {
+    "audience": "unisex",
+    "drop": "06",
+    "isNew": true,
+    "studioEdit": true,
+    "capsule": "studio",
+    "capsuleName": "REVE Studio — Chrome Edit",
+    "bg": "#f1efe8",
+    "fabric": "#424441",
+    "id": "studio-silver-jogger",
+    "name": "REVE Studio Silver Jogger",
+    "color": "Ash grey / silver",
+    "category": "broeken",
+    "type": "pants",
+    "price": 5995,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "description": "Een REVE-ontwerpconcept voor een ontspannen joggingbroek in dezelfde ash-grey kleurlijn als de Studio Silver Hoodie. Samen vormen ze het Studio Silver-pakje. De definitieve stof en maatvoering worden nog bevestigd.",
+    "image": "/studio/studio-silver-jogger.webp"
+  },
+  {
+    "audience": "unisex",
+    "drop": "06",
+    "isNew": true,
+    "studioEdit": true,
+    "capsule": "studio",
+    "capsuleName": "REVE Studio — Chrome Edit",
+    "bg": "#f1efe8",
+    "fabric": "#424441",
+    "id": "studio-track-shorts",
+    "name": "REVE Studio Track Shorts",
+    "color": "Washed black / silver",
+    "category": "broeken",
+    "type": "pants",
+    "price": 3995,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "description": "Een REVE-ontwerpconcept voor een korte broek in washed black met een klein zilverkleurig REVE-logo. Ontworpen als bijpassend stuk bij de Studio Chrome Backprint Tee. Materiaal en afmetingen worden nog bevestigd.",
+    "image": "/studio/studio-track-shorts.webp"
+  },
+  {
+    "audience": "unisex",
+    "drop": "06",
+    "isNew": true,
+    "studioEdit": true,
+    "capsule": "studio",
+    "capsuleName": "REVE Studio — Chrome Edit",
+    "bg": "#f1efe8",
+    "fabric": "#424441",
+    "id": "studio-signature-cap",
+    "name": "REVE Studio Signature Cap",
+    "color": "Warm cream / silver",
+    "category": "petjes",
+    "type": "cap",
+    "price": 2995,
+    "sizes": [
+      "One size"
+    ],
+    "description": "Een REVE-ontwerpconcept voor een cream petje met een klein zilverkleurig REVE-logo. Een licht accent bij de zwarte Chrome-look of het grijze Silver-pakje. De uiteindelijke uitvoering en maat volgen voor de verkoop.",
+    "image": "/studio/studio-signature-cap.webp"
+  },
+  {
+    "audience": "unisex",
+    "drop": "06",
+    "isNew": true,
+    "studioEdit": true,
+    "capsule": "studio",
+    "capsuleName": "REVE Studio — Chrome Edit",
+    "bg": "#f1efe8",
+    "fabric": "#424441",
+    "id": "studio-sling-bag",
+    "name": "REVE Studio Sling Bag",
+    "color": "Charcoal / silver",
+    "category": "accessoires",
+    "type": "cap",
+    "price": 4495,
+    "sizes": [
+      "One size"
+    ],
+    "description": "Een REVE-ontwerpconcept voor een compacte crossbodytas in charcoal met zilverkleurige details. Vorm, materiaal en afmetingen worden nog bevestigd. Een accessoire om je Studio-look mee samen te stellen.",
+    "image": "/studio/studio-sling-bag.webp"
+  },
+  {
+    "audience": "unisex",
+    "drop": "06",
+    "isNew": true,
+    "studioEdit": true,
+    "capsule": "studio",
+    "capsuleName": "REVE Studio — Chrome Edit",
+    "bg": "#f1efe8",
+    "fabric": "#424441",
+    "id": "studio-rib-socks",
+    "name": "REVE Studio Rib Socks",
+    "color": "Ivory / charcoal",
+    "category": "accessoires",
+    "type": "cap",
+    "price": 1495,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Een REVE-ontwerpconcept voor een paar ivory sokken met een klein donker REVE-logo. De afbeelding toont één paar. Materiaal en de bijbehorende schoenmaat per maat worden bevestigd voordat de verkoop start.",
+    "image": "/studio/studio-rib-socks.webp"
+  }
+]);
 const money = value => currencyFormatter.format(value/100);
 const escapeHTML=value=>String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;", "'":"&#39;"}[c]));
 function illustration(p) {
@@ -2637,7 +2805,7 @@ visible.slice(0,displayLimit).forEach(p=>{
 p={...p,name:escapeHTML(p.name),color:escapeHTML(p.color)};
 const card=document.createElement("article");card.className="product-card"+(p.category==="schoenen"?" product-shoe":"")+((p.merch100||p.summerShort)?" merch100-product":"");
 card.dataset.productId=p.id;
-card.innerHTML='<div class="product-art" style="--bg:'+p.bg+'"><span class="tag'+(p.isNew?' tag-new':'')+'">'+(p.isNew?'NIEUW REVE-ONTWERP':'FIRST CHAPTER')+'</span>'+illustration(p)+'</div><div class="product-heading"><h3>'+p.name+'</h3><span class="price">'+money(p.price)+'</span></div><p class="color">'+p.color+'</p>'+stockMarkup(p)+'<div class="product-actions"><select aria-label="Maat voor '+p.name+'">'+sizesFor(p).map(s=>'<option>'+s+'</option>').join("")+'</select><button class="add" type="button"'+(p.stock===0?' disabled':'')+'>'+(p.stock===0?'Uitverkocht':'In winkelmand +')+'</button></div>';
+card.innerHTML='<div class="product-art" style="--bg:'+p.bg+'"><span class="tag'+(p.isNew?' tag-new':'')+'">'+(p.studioEdit?'STUDIO EDIT':p.isNew?'NIEUW ONTWERP':'FIRST CHAPTER')+'</span>'+illustration(p)+'</div><div class="product-heading"><h3>'+p.name+'</h3><span class="price">'+money(p.price)+'</span></div><p class="color">'+p.color+'</p>'+stockMarkup(p)+'<div class="product-actions"><select aria-label="Maat voor '+p.name+'">'+sizesFor(p).map(s=>'<option>'+s+'</option>').join("")+'</select><button class="add" type="button"'+(p.stock===0?' disabled':'')+'>'+(p.stock===0?'Uitverkocht':'In winkelmand +')+'</button></div>';
 const selectedSize=selectedSizes.get(p.id);if(sizesFor(p).includes(selectedSize))card.querySelector('select').value=selectedSize;
 card.querySelector(".add").addEventListener("click",()=>{const current=products.find(product=>product.id===p.id);if(!current||current.stock===0){announce('Dit product is uitverkocht.');return}const size=card.querySelector("select").value;const existing=cart.find(i=>i.id===p.id&&i.size===size);if(existing){if(existing.qty>=99)return;existing.qty++}else cart.push({id:p.id,size,qty:1});saveCart();announce(current.name+" toegevoegd aan je winkelmand.");});
 const detail=document.createElement("button");detail.className="detail-button";detail.textContent="Bekijk product ↗";detail.setAttribute("aria-label","Bekijk "+p.name);detail.onclick=()=>openProduct(p);card.querySelector(".product-art").append(detail);
